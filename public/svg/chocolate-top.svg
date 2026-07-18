@@ -1,0 +1,117 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 2800 520"
+    preserveAspectRatio="none"
+>
+
+    <defs>
+
+        <linearGradient id="chocolateGradient" x1="0" y1="0" x2="0" y2="1">
+
+            <stop offset="0%" stop-color="#5B3624"/>
+            <stop offset="18%" stop-color="#4A2C1E"/>
+            <stop offset="45%" stop-color="#3A2116"/>
+            <stop offset="72%" stop-color="#2A170F"/>
+            <stop offset="100%" stop-color="#1B0F09"/>
+
+        </linearGradient>
+
+        <linearGradient id="glossGradient" x1="0" y1="0" x2="0" y2="1">
+
+            <stop offset="0%" stop-color="rgba(255,255,255,.14)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+
+        </linearGradient>
+
+        <filter id="softBlur">
+
+            <feGaussianBlur stdDeviation="2"/>
+
+        </filter>
+
+    </defs>
+
+    <!-- Main Chocolate -->
+
+    <path
+        fill="url(#chocolateGradient)"
+        d="
+M0 0
+
+H2800
+
+V250
+
+C2725 248 2660 256 2590 248
+
+C2490 238 2395 264 2300 248
+
+C2205 235 2115 262 2020 247
+
+C1925 232 1835 262 1740 247
+
+C1645 233 1555 260 1460 246
+
+C1365 231 1275 259 1180 246
+
+C1085 232 995 258 900 247
+
+C805 236 710 258 615 248
+
+C520 238 430 258 335 247
+
+C240 236 150 254 70 248
+
+C35 246 15 248 0 248
+
+Z
+    "
+    />
+
+    <!-- Chocolate Gloss -->
+
+    <path
+        fill="white"
+        opacity=".06"
+        filter="url(#softBlur)"
+        d="
+M0 228
+
+C180 240 360 220 560 236
+
+C760 252 980 220 1200 238
+
+C1420 255 1640 224 1860 240
+
+C2080 254 2320 226 2540 240
+
+C2650 246 2740 240 2800 238
+
+L2800 250
+
+C2700 246 2590 252 2480 250
+
+C2260 246 2040 258 1820 252
+
+C1600 246 1380 260 1160 252
+
+C940 246 720 258 500 250
+
+C320 244 150 250 0 246
+
+Z
+    "
+    />
+
+    <!-- Bottom Shadow -->
+
+    <rect
+        x="0"
+        y="245"
+        width="2800"
+        height="280"
+        fill="#120905"
+        opacity=".18"
+    />
+
+</svg>

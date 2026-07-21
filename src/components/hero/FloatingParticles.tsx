@@ -27,7 +27,7 @@ export default function FloatingParticles() {
             repeat: Infinity,
             delay: Math.random() * 5,
           }}
-          className="absolute h-[3px] w-[3px] rounded-full bg-[#D4AF37]"
+          className="absolute h-[3px] w-[3px] rounded-full bg-[#D9AE2F]"
           style={{
             left: `${20 + Math.random() * 60}%`,
             bottom: "-20px",

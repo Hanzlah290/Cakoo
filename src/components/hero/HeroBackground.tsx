@@ -13,6 +13,30 @@ export default function HeroBackground() {
   "
 />
 
+<div
+  className="absolute inset-0"
+  style={{
+    background: `
+      linear-gradient(
+        90deg,
+        rgba(58,36,24,.70) 0%,
+        rgba(58,36,24,.55) 28%,
+        rgba(58,36,24,.35) 40%,
+        rgba(58,36,24,.15) 52%,
+        rgba(58,36,24,0) 68%
+      )
+    `,
+  }}
+/>
+
+<div
+  className="absolute inset-0"
+  style={{
+    background:
+      "radial-gradient(circle at 18% 45%, rgba(212,175,55,.08), transparent 45%)",
+  }}
+/>
+
       {/* Main Cinematic Overlay */}
 
 

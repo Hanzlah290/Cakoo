@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LoadingScreen from "@/components/loading/LoadingScreen";
@@ -8,18 +11,34 @@ import CTA from "@/components/cta/CTA";
 import Marquee from "@/components/marquee/Marquee";
 
 export default function Home() {
+
+  const [loadingFinished, setLoadingFinished] = useState(false);
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setLoadingFinished(true);
+  }, 3600); // Same duration as LoadingScreen
+
+  return () => clearTimeout(timer);
+}, []);
+
   return (
+<>
+  {!loadingFinished ? (
+    <LoadingScreen
+      onComplete={() => setLoadingFinished(true)}
+    />
+  ) : (
     <>
-     <LoadingScreen />
       <Navbar />
       <Hero />
       <SignatureSection />
-      
-      <Stats/>
       <Marquee />
+      <Stats />
       <CTA />
-
       <Footer />
     </>
+  )}
+</>
   );
 }

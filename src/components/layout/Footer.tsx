@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const links = [
   { name: "Home", href: "/" },
@@ -11,22 +12,59 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#090503]">
+    <footer
+     className="
+     relative
+     overflow-visible
+     pt-0
+     bg-[#382116]
+     "
+    >
 
-      {/* Top Fade */}
+    <div
+      className="
+        absolute
+        top-0
+        left-0
+        w-full
+        top-[-132px]
+        overflow-hidden
+        leading-none
+        z-20
+      "
+    >
+  <svg
+    viewBox="0 0 1440 120"
+    className="block w-full h-33"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#382116"
+      d="
+       M0,120
+       C180,70 420,20 720,70
+       C1020,120 1260,70 1440,95
+       L1440,120
+       L0,120
+       Z
+      "
+    />
+  </svg>
 
+  
+</div>
 <div
   className="
     absolute
-    inset-x-0
-    top-0
-    h-52
-    bg-gradient-to-b
-    from-[#120C09]/40
-    via-[#0D0705]/70
-    to-transparent
+    inset-0
+    bg-[linear-gradient(180deg,#382116_0%,#26150E_45%,#180D08_100%)]
+    -z-10
   "
 />
+
+
+      {/* Top Fade */}
+
 
       {/* Gold Ambient Glow */}
 <motion.div
@@ -66,9 +104,9 @@ export default function Footer() {
         "
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-8 py-5 lg:px-16">
+      <div className="relative z-10 mx-auto max-w-7xl px-8 py-8 pb-6 lg:px-16">
 
-        <div
+<div
   className="
     pointer-events-none
     absolute
@@ -82,11 +120,12 @@ export default function Footer() {
   <h1
     className="
       font-[family:var(--font-heading)]
-      text-[180px]
+      text-[190px]
       font-semibold
       tracking-[-0.08em]
-      text-white/[0.02]
-      lg:text-[520px]
+      text-[#D4AF37]/[0.025]
+      tracking-[-0.1em]
+      lg:text-[350px]
     "
   >
     CAKOO
@@ -95,6 +134,39 @@ export default function Footer() {
 </div>
 
         {/* Logo */}
+
+          <p
+    className="
+      mt-3
+      text-xs
+      uppercase
+      tracking-[0.35em]
+      text-white/25
+    "
+  >
+    <div
+className="
+absolute
+left-1/2
+top-20
+h-44
+w-44
+-translate-x-1/2
+rounded-full
+bg-[#D4AF37]/8
+blur-[90px]
+"
+/>
+    <Image
+    src="/images/cakoo-v3.png"
+    alt="Cakoo"
+    width={190}
+    height={78}
+    className="mx-auto mb-5"
+/>
+
+
+  </p>
 
         <motion.div
 initial={{
@@ -116,26 +188,22 @@ whileInView={{
           <h2
             className="
               font-[family:var(--font-heading)]
-              text-6xl
-              text-white
-              md:text-7xl
+              text-4xl
+              text-[#D4AF37]
+              md:text-5xl
             "
           >
             
          Crafted With Passion
-
-            <span className="block font-light italic text-[#D4AF37]">
-             One handcrafted cake at a time.
-            </span>
 
           </h2>
 
           <p
             className="
               mx-auto
-              mt-8
+              mt-5
               max-w-xl
-              text-lg
+              text-xl
               leading-7
               text-white/55
             "
@@ -152,7 +220,7 @@ whileInView={{
   transition={{ delay: .2, duration: .8 }}
   className="
     mx-auto
-    mt-10
+    mt-7
     flex
     items-center
     justify-center
@@ -160,87 +228,56 @@ whileInView={{
   "
 >
 
-  <div className="h-px w-32 bg-gradient-to-r from-transparent to-[#D4AF37]/40" />
+  <div className="h-px w-40 bg-gradient-to-r from-transparent to-[#D4AF37]/40" />
 
   <span className="text-[#D4AF37] text-xl">
     ✦
   </span>
 
-  <div className="h-px w-32 bg-gradient-to-l from-transparent to-[#D4AF37]/40" />
+  <div className="h-px w-40 bg-gradient-to-l from-transparent to-[#D4AF37]/40" />
 
 </motion.div>
-<nav className="mt-16 flex justify-center gap-14">
 
-  {links.map((link) => (
+<div
+className="
+mt-8
+flex
+justify-center
+items-start
+gap-40
+"
+>
 
-    <Link
-      key={link.name}
-      href={link.href}
-      className="
-        group
-        relative
-        text-sm
-        uppercase
-        tracking-[0.35em]
-        text-white/75
-        transition
-        duration-300
-        hover:text-[#D4AF37]
-      "
-    >
-      {link.name}
+  <div className="text-center w-40">
 
-      <span
-        className="
-          absolute
-          -bottom-2
-          left-0
-          h-px
-          w-0
-          bg-[#D4AF37]
-          transition-all
-          duration-300
-          group-hover:w-full
-        "
-      />
-
-    </Link>
-
-  ))}
-
-</nav>
-<div className="mt-12 grid grid-cols-2 gap-12 text-center">
-
-  <div>
-
-    <h4 className="uppercase tracking-[0.3em] text-[#D4AF37] text-xs">
+    <h4 className="uppercase tracking-[0.3em] text-[#D4AF37] text-sm">
       Wah Cantt
     </h4>
 
-    <p className="mt-4 text-white/60">
+    <p className="mt-4 text-white/60 text-lg">
       Open Daily
       <br />
-      7:00 AM – 11:00 PM
+      7 AM – 11 PM
     </p>
 
   </div>
 
-  <div>
+  <div className="text-center w-40">
 
-    <h4 className="uppercase tracking-[0.3em] text-[#D4AF37] text-xs">
+    <h4 className="uppercase tracking-[0.3em] text-[#D4AF37] text-sm">
       Attock
     </h4>
 
-    <p className="mt-4 text-white/60">
+    <p className="mt-4 text-white/60 text-lg">
       Open Daily
       <br />
-      11:00 AM – 11:00 PM
+      11 AM – 11 PM
     </p>
 
   </div>
 
 </div>
-<div className="mt-16 text-center">
+<div className="mt-4 text-center">
 
   <div className="mx-auto mb-10 h-px max-w-md bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
@@ -248,19 +285,11 @@ whileInView={{
 
   <p className="text-sm text-white/35">
     © 2026 Cakoo Bakery
+
+Premium Cakes • Wah Cantt • Attock • Pakistan
   </p>
 
-  <p
-    className="
-      mt-3
-      text-xs
-      uppercase
-      tracking-[0.35em]
-      text-white/25
-    "
-  >
-    Crafted With Passion • Wah Cantt • Pakistan
-  </p>
+
 
 </div>
 

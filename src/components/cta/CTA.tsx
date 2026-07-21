@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  fadeUp,
+  scaleIn,
+  viewport,
+} from "@/lib/animations";
 
 export default function CTA() {
   return (
@@ -9,7 +14,7 @@ export default function CTA() {
   className="
     relative
     overflow-hidden
-    bg-[linear-gradient(180deg,#F7F2EB_0%,#F3ECE3_100%)]
+    bg-[#FFFDD0]
     px-6
     py-26
   "
@@ -23,6 +28,7 @@ relative
 mx-auto
 max-w-6xl
 text-center
+pb-[320px]
 "
 >
 
@@ -61,20 +67,10 @@ blur-[120px]
         {/* Heading */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: .8,
-          }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
           className="relative z-20"
         >
           <p
@@ -109,7 +105,18 @@ blur-[120px]
             </span>
           </h2>
 
-          <div className="mx-auto mt-10 h-px w-24 bg-[#D4AF37]/70" />
+          <div
+  className="
+    mx-auto
+    mt-12
+    h-px
+    w-28
+    bg-gradient-to-r
+    from-transparent
+    via-[#D4AF37]
+    to-transparent
+  "
+/>
 
           <p
             className="
@@ -117,7 +124,7 @@ blur-[120px]
               mt-12
               max-w-xl
               text-lg
-              leading-9
+              leading-8
               text-[#5E4A3E]
             "
           >
@@ -129,20 +136,23 @@ blur-[120px]
           <div className="mt-14 flex justify-center gap-5 flex-wrap">
 
             <button
-              className="
-                rounded-full
-                bg-gradient-to-r
-                from-[#BF8D1B]
-                via-[#D4AF37]
-                to-[#F1D882]
-                px-10
-                py-5
-                font-semibold
-                text-[#120C09]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-              "
+className="
+rounded-full
+bg-gradient-to-r
+from-[#BF8D1B]
+via-[#D4AF37]
+to-[#F1D882]
+px-10
+py-5
+font-semibold
+text-[#120C09]
+shadow-lg
+shadow-[#D4AF37]/20
+transition-all
+duration-300
+hover:scale-[1.02]
+hover:shadow-[#D4AF37]/35
+"
             >
               Order on WhatsApp
             </button>
@@ -153,10 +163,10 @@ blur-[120px]
                 border
                 px-10
                 py-5
-                border-[#2A1A13]/15
-bg-white/50
+                border-[#2A1A13]/10
+bg-white/70
 text-[#1B130D]
-hover:bg-white
+hover:bg-white/90
                 backdrop-blur-xl
                 transition-all
                 duration-300
@@ -176,7 +186,7 @@ hover:bg-white
              rotate: 360,
            }}
            transition={{
-             duration: 45,
+             duration: 90,
              repeat: Infinity,
              ease: "linear",
            }}
@@ -220,27 +230,6 @@ hover:bg-white
          
          <motion.div
            animate={{
-             y: [0, 10, 0],
-             opacity: [1, .3, 1],
-           }}
-           transition={{
-             duration: 5,
-             repeat: Infinity,
-           }}
-           className="
-             absolute
-             right-[18%]
-             top-[70%]
-             z-20
-             h-3
-             w-3
-             rounded-full
-             bg-[#D4AF37]/70
-           "
-         />
-         
-         <motion.div
-           animate={{
              opacity: [.2,1,.2],
              rotate:[0,180,360],
            }}
@@ -262,79 +251,89 @@ hover:bg-white
 
         {/* Floating Cake */}
 
-        <div
-className="
-relative
-mx-auto
-max-w-6xl
-text-center
-pb-[320px]
-"
->
 
-<div
-className="
-absolute
-left-1/2
-bottom-[150px]
-h-[560px]
-w-[560px]
--translate-x-1/2
-rounded-full
-border
-border-[#D4AF37]/6
-"
-/>
-
-        <motion.div
-          animate={{
-            y: [0, -10, 0],
-            rotate: [0, 0.5, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          <div
           className="
+          absolute
+          left-1/2
+          bottom-[70px]
+          h-[560px]
+          w-[560px]
+          -translate-x-1/2
+          rounded-full
+          border
+          border-[#D4AF37]/6
+          "
+          />
+
+  
+        <motion.div
+            initial={{
+              opacity: 0,
+              y: 50,
+              scale: 0.97,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={viewport}
+            transition={{
+              duration: 0.9,
+              ease: "easeOut",
+            }}
+            className="
             absolute
-            bottom-[-260px]
+            bottom-[0px]
             left-1/2
             z-30
             -translate-x-1/2
           "
         >
+          <div
+            className="
+              absolute
+              left-1/2
+              bottom-[80px]
+              h-12
+              w-72
+              -translate-x-1/2
+              rounded-full
+              bg-black/25
+              blur-3xl
+            "
+          />
+
+          <motion.div
+  animate={{
+    y: [0, -6, 0],
+  }}
+  transition={{
+    duration: 5,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+>
         <Image
           src="/images/cta-cake.png"
           alt="Premium Cake"
-          width={450}
-          height={450}
-          priority
+          width={350}
+          height={350}
           className="
             rotate-[-4deg]
             select-none
             pointer-events-none
-            drop-shadow-[0_70px_120px_rgba(0,0,0,.55)]
+            drop-shadow-[0_40px_80px_rgba(0,0,0,.4)]
           "
         />
+        </motion.div>
         </motion.div>
 
         <div className="h-10" />
 
       </div>
-      </div>
-      <div
-className="
-absolute
-bottom-0
-left-0
-h-40
-w-full
-bg-gradient-to-b
-from-transparent
-to-[#2A1A13]
-"
-/>
+
 
     </section>
   );

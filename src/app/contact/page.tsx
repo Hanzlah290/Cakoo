@@ -84,7 +84,7 @@ export default function ContactPage() {
                 text-white/65
               "
             >
-              Whether you're planning a birthday,
+              Whether you&apos;re planning a birthday,
               wedding or special celebration,
               our team is ready to craft something unforgettable.
             </motion.p>
@@ -121,14 +121,14 @@ export default function ContactPage() {
                   text-white
                   "
                 >
-                  Let's Talk
+                  Let&apos;s Talk
                 </h2>
 
                 <p className="mt-6 leading-8 text-white/65">
                   Need a custom birthday cake,
                   wedding cake or premium desserts?
 
-                  Contact our team directly and we'll help
+                  Contact our team directly and we&apos;ll help
                   you create something unforgettable.
                 </p>
 

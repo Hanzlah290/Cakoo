@@ -1,14 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const links = [
-  { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
-  { name: "Contact", href: "/contact" },
-];
+
 
 export default function Footer() {
   return (

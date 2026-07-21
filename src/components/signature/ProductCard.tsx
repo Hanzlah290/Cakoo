@@ -19,10 +19,12 @@ export default function ProductCard({
   return (
     <motion.div
       whileHover={{
-        y: -12,
+        y: -8,
       }}
+      
       transition={{
-        duration: 0.35,
+        duration: 0.4,
+        ease: "easeOut",
       }}
       className={`
         group
@@ -83,7 +85,7 @@ pointer-events-none
             transition-transform
             duration-700
             group-hover:scale-110
-            rotate: 1.5
+            -rotate-1
           "
         />
       </div>

@@ -130,7 +130,7 @@ export default function Footer() {
 
         {/* Logo */}
 
-          <p
+          <div
     className="
       mt-3
       text-xs
@@ -161,7 +161,7 @@ blur-[90px]
 />
 
 
-  </p>
+  </div>
 
         <motion.div
 initial={{

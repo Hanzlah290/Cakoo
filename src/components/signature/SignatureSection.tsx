@@ -3,6 +3,7 @@
 import { featuredProducts } from "@/data/products";
 import ProductCard from "./ProductCard";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   fadeUp,
   staggerContainer,
@@ -109,7 +110,7 @@ export default function Signature() {
            viewport={viewport}
            className="mt-20 text-center"
          >
-        
+         <Link href="/products">
           <button
             className="
               rounded-full
@@ -126,6 +127,7 @@ export default function Signature() {
           >
             Explore Full Collection →
           </button>
+          </Link>
       
       </motion.div>
       </div>

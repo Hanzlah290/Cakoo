@@ -9,6 +9,10 @@ import {
   AlertTriangle,
   ArrowRight,
 } from "lucide-react";
+import {
+  fadeUp,
+  viewport,
+} from "@/lib/animations";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -101,27 +105,76 @@ export default function ProductsPage() {
     <>
       <Navbar />
 
-      <main className="bg-[#090503] pt-36 text-white">
+      <main
+        className="
+          relative
+          overflow-hidden
+          pt-36
+          bg-[#FFFDD0]
+        "
+      >
+
+        <div
+          className="
+            absolute
+            -left-44
+            top-24
+            h-[600px]
+            w-[600px]
+            rounded-full
+            bg-[#8A5A3B]/10
+            blur-[180px]
+            pointer-events-none
+          "
+        />
+
+        <div
+          className="
+            absolute
+            right-[-180px]
+            top-[420px]
+            h-[600px]
+            w-[600px]
+            rounded-full
+            bg-[#7A4C31]/8
+            blur-[190px]
+            pointer-events-none
+          "
+        />
 
         {/* Hero */}
 
-        <section className="relative overflow-hidden">
+        <section
+          className="
+            relative
+            overflow-hidden
+            bg-[#FFFDD0]
+            pb-20
+          "
+        >
 
           <div
             className="
-            absolute
-            left-1/2
-            top-0
-            h-[650px]
-            w-[650px]
             -translate-x-1/2
+            absolute
+            left-[18%]
+            top-[20%]
+            h-[450px]
+            w-[450px]
             rounded-full
-            bg-[#D4AF37]/10
-            blur-[180px]
+            bg-[#FFF8E5]/60
+            blur-[140px]
           "
           />
 
           <div className="relative z-10 mx-auto max-w-7xl px-8 lg:px-16">
+
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewport}
+              >
 
             <motion.p
               initial={{ opacity: 0, y: 25 }}
@@ -130,47 +183,49 @@ export default function ProductsPage() {
               uppercase
               tracking-[0.45em]
               text-[#D4AF37]
-              text-sm
+              text-md
             "
             >
               Premium Collection
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: .1 }}
               className="
               mt-6
               font-[family:var(--font-heading)]
               text-6xl
               md:text-8xl
+              text-[#1B130D]
             "
             >
               Sweet
 
-              <span className="block italic font-light text-[#D4AF37]">
+<motion.span
+  variants={fadeUp}
+  transition={{
+    delay: 0.15,
+  }}
+  className="block italic font-light text-[#D4AF37]"
+>
                 Creations
-              </span>
+              </motion.span>
 
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: .2 }}
               className="
               mt-8
-              max-w-2xl
+              max-w-3xl
               text-lg
-              leading-9
-              text-white/65
+              leading-6
+              text-[#5E4A3E]
             "
             >
               Explore handcrafted cakes, cheesecakes,
               premium desserts and celebration favorites
               baked fresh every day.
             </motion.p>
+            </motion.div>
 
           </div>
 
@@ -200,8 +255,8 @@ export default function ProductsPage() {
                       duration-300
                       ${
                         category === item
-                          ? "bg-[#D4AF37] text-[#120C09]"
-                          : "border border-white/10 bg-white/5 text-white hover:border-[#D4AF37]/30"
+                          ? "bg-gradient-to-r from-[#BF8D1B] via-[#D4AF37] to-[#F1D882] text-[#120C09] shadow-lg shadow-[#D4AF37]/20"
+                          : "border border-[#D4AF37]/20 bg-white/70 shadow-sm hover:shadow-md text-[#1B130D] backdrop-blur-xl hover:bg-white/90 hover:border-[#D4AF37]/30"
                       }
                     `}
                   >
@@ -220,7 +275,7 @@ export default function ProductsPage() {
                   left-5
                   top-1/2
                   -translate-y-1/2
-                  text-white/40
+                  text-[#8A7B6A]
                 "
                 />
 
@@ -234,8 +289,12 @@ export default function ProductsPage() {
                   w-full
                   rounded-full
                   border
-                  border-white/10
-                  bg-white/5
+                  bg-white/90
+                  shadow-sm
+                  border-[#D4AF37]/12
+                  text-[#1B130D]
+                  placeholder:text-[#8A7B6A]
+                  backdrop-blur-xl
                   py-4
                   pl-14
                   pr-6
@@ -256,9 +315,12 @@ export default function ProductsPage() {
               gap-4
               rounded-2xl
               border
-              border-[#D4AF37]/10
-              bg-[#120C09]
+              bg-white/75
+              shadow-sm
+              border-[#D4AF37]/15
+              backdrop-blur-xl
               p-6
+              mt-8
             "
             >
 
@@ -266,7 +328,7 @@ export default function ProductsPage() {
                 className="text-[#D4AF37]"
               />
 
-              <p className="text-white/60 leading-7">
+              <p className="text-[#5E4A3E] leading-7">
 
                 Prices shown are estimated.
 
@@ -277,9 +339,37 @@ export default function ProductsPage() {
 
             </div>
             </div>
-</section>
-                    {/* ========================================= */}
+         </section>
+
         {/* Product Grid */}
+
+        <div
+          className="
+            absolute
+            left-[-220px]
+            top-[1200px]
+            h-[350px]
+            w-[400px]
+            rounded-full
+            bg-[#8D6547]/8
+            blur-[230px]
+            pointer-events-none
+          "
+        />
+
+        <div
+          className="
+            absolute
+            right-[-260px]
+            top-[1900px]
+            h-[350px]
+            w-[400px]
+            rounded-full
+            bg-[#A0724D]/7
+            blur-[240px]
+            pointer-events-none
+          "
+        />
         {/* ========================================= */}
 
         <section className="pb-32">
@@ -330,12 +420,14 @@ export default function ProductsPage() {
                       overflow-hidden
                       rounded-[34px]
                       border
-                      border-white/5
-                      bg-white/[0.03]
+                      border-[#D4AF37]/18
+                      bg-[#382116]
                       backdrop-blur-xl
                       transition-all
                       duration-500
-                      hover:border-[#D4AF37]/20
+                      hover:border-[#D4AF37]/25
+                      shadow-[0_35px_80px_rgba(28,18,12,0.18)]
+                      hover:shadow-[0_45px_90px_rgba(28,18,12,0.28)]
                     "
                   >
 
@@ -349,7 +441,7 @@ export default function ProductsPage() {
                         h-56
                         w-56
                         rounded-full
-                        bg-[#D4AF37]/8
+                        bg-[#F3D78C]/12
                         blur-[90px]
                         opacity-0
                         transition-all
@@ -390,8 +482,8 @@ export default function ProductsPage() {
                         className="
                           rounded-full
                           border
-                          border-[#D4AF37]/20
-                          bg-[#D4AF37]/10
+                          bg-[#F3D78C]/14
+                          border-[#D4AF37]/15
                           px-4
                           py-2
                           text-[11px]
@@ -536,7 +628,7 @@ export default function ProductsPage() {
                   rounded-[36px]
                   border
                   border-white/5
-                  bg-white/[0.03]
+                  bg-[#17100B]
                   py-28
                   text-center
                   backdrop-blur-xl
@@ -562,10 +654,10 @@ export default function ProductsPage() {
                     mt-5
                     max-w-lg
                     leading-8
-                    text-white/60
+                    bg-[#17100B]
                   "
                 >
-                  We couldn't find any products matching
+                  We couldn&apos;t find any products matching
                   your search or selected category.
                 </p>
 
@@ -602,6 +694,32 @@ export default function ProductsPage() {
 
         {/* ======================================= */}
         {/* CTA */}
+        <div
+          className="
+            absolute
+            left-[-180px]
+            bottom-[320px]
+            h-[600px]
+            w-[600px]
+            rounded-full
+            bg-[#8B5B3D]/10
+            blur-[220px]
+            pointer-events-none
+          "
+        />
+        <div
+          className="
+            absolute
+            right-[-220px]
+            bottom-[-120px]
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-[#A77B55]/8
+            blur-[200px]
+            pointer-events-none
+          "
+        />
         {/* ======================================= */}
 
         <section className="pb-32">
@@ -615,7 +733,7 @@ export default function ProductsPage() {
               rounded-[40px]
               border
               border-[#D4AF37]/15
-              bg-[#120C09]
+              bg-[#382116]
               px-10
               py-20
               text-center
@@ -651,7 +769,7 @@ export default function ProductsPage() {
                   md:text-7xl
                 "
               >
-                Can't Find
+                Can&apos;t Find
 
                 <span className="block italic font-light text-[#D4AF37]">
                   Your Dream Cake?
@@ -694,6 +812,7 @@ export default function ProductsPage() {
                   transition-all
                   duration-300
                   hover:scale-105
+                  hover:shadow-[0_18px_45px_rgba(212,175,55,.28)]
                 "
               >
                 Request Custom Cake

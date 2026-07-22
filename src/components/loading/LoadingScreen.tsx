@@ -1,37 +1,39 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
-export default function LoadingScreen() {
-  const [loading, setLoading] = useState(true);
+interface LoadingScreenProps {
+  onComplete: () => void;
+}
+
+export default function LoadingScreen({
+  onComplete,
+}: LoadingScreenProps) {
 
 const [exiting, setExiting] = useState(false);
 
 useEffect(() => {
-
   const exitTimer = setTimeout(() => {
     setExiting(true);
   }, 2500);
 
-  const removeTimer = setTimeout(() => {
-    setLoading(false);
+  const completeTimer = setTimeout(() => {
+    onComplete();
   }, 3600);
 
   return () => {
     clearTimeout(exitTimer);
-    clearTimeout(removeTimer);
+    clearTimeout(completeTimer);
   };
-
-}, []);
+}, [onComplete]);
 
   return (
 
     
-    <AnimatePresence>
-{loading && (
+
   <motion.div
     key="loading-screen"
     exit={{
@@ -40,8 +42,47 @@ useEffect(() => {
         duration: 0.35,
       },
     }}
-    className="fixed inset-0 z-[9999] overflow-hidden bg-[#090503]"
+    className="fixed inset-0 z-[9999] overflow-hidden bg-[#382116]"
   >
+<div
+className="
+absolute
+inset-0
+opacity-[0.03]
+pointer-events-none
+bg-[url('/images/noise.png')]
+"
+/>
+  {/* Top Left Cocoa Glow */}
+  <div
+    className="
+      absolute
+      left-[-200px]
+      top-[80px]
+      h-[500px]
+      w-[500px]
+      rounded-full
+      bg-[#8B5B3D]/14
+      blur-[200px]
+      pointer-events-none
+    "
+  />
+
+  {/* Top Right Gold Glow */}
+  <div
+    className="
+      absolute
+      right-[-180px]
+      top-[-120px]
+      h-[520px]
+      w-[520px]
+      rounded-full
+      bg-[#D4AF37]/10
+      blur-[200px]
+      pointer-events-none
+      
+    "  
+    />
 
 <motion.div
 animate={{
@@ -49,7 +90,7 @@ animate={{
 scale:
     exiting
         ? .85
-        : [1,1.16,1],
+        : [1,1.08,1],
 
 opacity:
     exiting
@@ -72,8 +113,15 @@ transition={{
     -translate-x-1/2
     -translate-y-1/2
     rounded-full
-    bg-[#D4AF37]
+    bg-[#D4AF37]/18
     blur-[150px]
+  "
+/><div
+  className="
+    absolute
+    inset-0
+    bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.18)_100%)]
+    pointer-events-none
   "
 />
 
@@ -121,7 +169,7 @@ transition={{
       width={260}
       height={110}
       priority
-      className="mx-auto w-[230px] h-auto select-none"
+      className="mx-auto w-[250px] h-auto select-none"
     />
   </motion.div>
   </motion.div>
@@ -142,6 +190,7 @@ transition={{
     w-2
     rounded-full
     bg-[#D4AF37]
+    opacity-40
   "
 />
 <motion.div
@@ -160,7 +209,8 @@ transition={{
     h-2
     w-2
     rounded-full
-    bg-[#D4AF37]
+        bg-[#D4AF37]
+    opacity-40
   "
 />
 <motion.div
@@ -180,6 +230,7 @@ transition={{
     w-2
     rounded-full
     bg-[#D4AF37]
+    opacity-40
   "
 />
 
@@ -203,7 +254,7 @@ animate={{
       text-xs
       uppercase
       tracking-[0.45em]
-      text-white
+      text-white/60
     "
   >
     Crafted With Passion
@@ -305,7 +356,5 @@ transition={{
 </motion.div>
 </motion.div>
         </motion.div>
-      )}
-    </AnimatePresence>
-  );
+      )
 }

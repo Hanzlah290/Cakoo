@@ -1,6 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  fadeUp,
+  staggerContainer,
+  viewport,
+} from "@/lib/animations";
 import StatItem from "./StatItem";
 
 export default function Stats() {
@@ -76,21 +81,10 @@ export default function Stats() {
         {/* Heading */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.4,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
           className="text-center"
         >
           <p
@@ -139,20 +133,10 @@ export default function Stats() {
         {/* Stats */}
 
         <motion.div
+          variants={staggerContainer}
           initial="hidden"
-          whileInView="show"
-          viewport={{
-            once: true,
-            amount: 0.35,
-          }}
-          variants={{
-            hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.18,
-              },
-            },
-          }}
+          whileInView="visible"
+          viewport={viewport}
           className="
             mt-28
             grid
@@ -193,12 +177,6 @@ export default function Stats() {
         {/* Bottom Divider */}
 
         <motion.div
-          initial={{
-            scaleX: 0,
-          }}
-          whileInView={{
-            scaleX: 1,
-          }}
           viewport={{
             once: true,
           }}

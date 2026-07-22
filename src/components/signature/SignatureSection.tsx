@@ -2,6 +2,13 @@
 
 import { featuredProducts } from "@/data/featuredProducts";
 import ProductCard from "./ProductCard";
+import { motion } from "framer-motion";
+import {
+  fadeUp,
+  staggerContainer,
+  staggerItem,
+  viewport,
+} from "@/lib/animations";
 
 export default function Signature() {
   return (
@@ -44,7 +51,13 @@ export default function Signature() {
 </div>
       <div className="mx-auto max-w-7xl px-8 lg:px-16">
 
-        <div className="mx-auto max-w-2xl text-center">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="mx-auto max-w-2xl text-center"
+        >
 
           <p className="tracking-[0.45em] text-[#D4AF37] uppercase text-sm">
             Signature Collection
@@ -58,10 +71,10 @@ export default function Signature() {
               text-white
             "
           >
-            Our Signature 
-            <h2 className="block italic font-light text-[#D4AF37]">
-            Collection
-            </h2>
+            Our Signature
+            <span className="block italic font-light text-[#D4AF37]">
+              Collection
+            </span>
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-white/60">
@@ -69,18 +82,34 @@ export default function Signature() {
             unforgettable celebrations.
           </p>
 
-        </div>
-
-        <div className="mt-20 grid gap-14 lg:grid-cols-3">
-          {featuredProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-            />
-          ))}
-        </div>
-
-        <div className="mt-20 text-center">
+        
+        </motion.div>
+        
+         <motion.div
+           variants={staggerContainer}
+           initial="hidden"
+           whileInView="visible"
+           viewport={viewport}
+           className="mt-20 grid gap-14 lg:grid-cols-3"
+         >
+           {featuredProducts.map((product) => (
+             <motion.div
+               key={product.id}
+               variants={staggerItem}
+             >
+               <ProductCard product={product} />
+             </motion.div>
+           ))}
+         </motion.div>
+         
+         <motion.div
+           variants={fadeUp}
+           initial="hidden"
+           whileInView="visible"
+           viewport={viewport}
+           className="mt-20 text-center"
+         >
+        
           <button
             className="
               rounded-full
@@ -97,8 +126,8 @@ export default function Signature() {
           >
             Explore Full Collection →
           </button>
-        </div>
-
+      
+      </motion.div>
       </div>
     </section>
   );

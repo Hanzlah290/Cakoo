@@ -53,33 +53,22 @@ export default function Navbar() {
         inset-x-0
         top-0
         z-50
+        overflow-hidden
+        shadow-[0_8px_35px_rgba(43,23,14,.10)]
         transition-all
         duration-500
+        border-b border-[#D4AF37]/10
         ${
-          scrolled
-            ? "bg-[#251f1c]/70 backdrop-blur-2xl"
-            : "bg-transparent"
+        scrolled
+          ? "bg-[#2B170E]/70 backdrop-blur-2xl shadow-[0_8px_35px_rgba(0,0,0,.12)]"
+          : "bg-white/[0.02] backdrop-blur-lg"
         }
       `}
     >
+
       {/* Bottom Border */}
 
-      <div
-        className="
-          absolute
-          bottom-0
-          left-0
-          h-px
-          w-full
-          bg-gradient-to-r
-          from-transparent
-          via-white/10
-          to-transparent
-        "
-      />
-
-      {/* Animated Gold Accent */}
-
+      {/* Gold Accent */}
       {scrolled && (
         <motion.div
           initial={{
@@ -104,12 +93,12 @@ export default function Navbar() {
             from-transparent
             via-[#D4AF37]
             to-transparent
+            z-20
           "
         />
       )}
 
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-8 lg:px-16">
-
+      <div className="relative z-20 mx-auto flex h-24 max-w-[1700px] items-center justify-between px-10 lg:px-20">
         {/* Logo */}
 
         <Link
@@ -123,11 +112,11 @@ export default function Navbar() {
           <Image
             src="/images/cakoo-v1.png"
             alt="Cakoo Bakery"
-            width={220}
-            height={90}
+            width={280}
+            height={110}
             priority
             className="
-              h-20
+              h-24
               w-auto
               object-contain
               select-none
@@ -137,7 +126,7 @@ export default function Navbar() {
 
         {/* Navigation */}
 
-        <nav className="hidden items-center gap-14 md:flex">
+        <nav className="hidden items-center gap-16 md:flex">
           {links.map((link) => {
             const active = pathname === link.href;
 
@@ -149,40 +138,28 @@ export default function Navbar() {
                   group
                   relative
                   py-2
-                  text-[12px]
                   uppercase
-                  tracking-[0.38em]
                   transition-all
                   duration-300
+                  text-[13px]
+                  tracking-[0.28em]
+                  font-medium
                 "
               >
-                <span
-                  className={
-                    active
-                      ? "text-[#D4AF37]"
-                      : "text-white/80 group-hover:text-[#D4AF37]"
-                  }
-                >
+<span
+  className={`
+    inline-block
+    transition-all
+    duration-300
+    ${
+      active
+        ? "text-[#D4AF37]"
+        : "text-[#2B170E] group-hover:text-[#D4AF37] group-hover:-translate-y-[2px]"
+    }
+  `}
+>
                   {link.title}
                 </span>
-
-                <motion.span
-                  layoutId="navbar-indicator"
-                  className={`
-                    absolute
-                    left-0
-                    -bottom-1
-                    h-px
-                    bg-[#D4AF37]
-                    transition-all
-                    duration-300
-                    ${
-                      active
-                        ? "w-full"
-                        : "w-0 group-hover:w-full"
-                    }
-                  `}
-                />
               </Link>
             );
           })}

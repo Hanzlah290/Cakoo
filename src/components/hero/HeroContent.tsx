@@ -4,32 +4,21 @@ import { motion } from "framer-motion";
 
 export default function HeroContent() {
   return (
+
+    <div
+  className="
+    relative
+    z-20
+    w-full
+    max-w-xl
+    px-10
+    py-8
+    md:px-12
+    md:py-7
+  "
+>
     <div className="relative z-20 w-full max-w-xl">
-      <div
-        className="
-          relative
-          overflow-hidden
-          rounded-[32px]
-          border
-          border-[#F5D58C]/12
-          bg-[#2B1D16]/42
-          backdrop-blur-3xl
-          px-10
-          py-8
-          md:px-12
-          md:py-7
-          shadow-[0_30px_90px_rgba(0,0,0,.45)]
-          transition-all
-          duration-700
-          hover:border-[#D4AF37]/20
-        "
-      >
         {/* Decorative Lighting */}
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-
-        <div className="absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[#D4AF37]/6 blur-[90px]" />
-
-        <div className="absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-[#2A170D]/50 blur-[90px]" />
 
         {/* Header */}
         <motion.div
@@ -42,24 +31,36 @@ export default function HeroContent() {
             <div className="h-px w-16 bg-[#D4AF37]" />
 
             <div>
-              <p className="text-[11px] uppercase tracking-[0.45em] text-white/35">
-                Wah Cantt
-              </p>
 
-              <p className="mt-1 text-sm uppercase tracking-[0.45em] text-[#D4AF37]">
+              <p className="mt-1 text-sm uppercase tracking-[0.45em] text-[#D7A72A]">
                 Premium Bakery
               </p>
             </div>
           </div>
         </motion.div>
 
+
+        <div
+  className="
+    absolute
+    -left-24
+    top-16
+    h-[420px]
+    w-[420px]
+    rounded-full
+    bg-[#D4AF37]/10
+    blur-[120px]
+    -z-10
+  "
+/>
+
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 0.2,
-            duration: 0.9,
+            delay: 0.15,
+            duration: 0.8,
           }}
           className="
             relative
@@ -67,16 +68,18 @@ export default function HeroContent() {
             font-[family:var(--font-heading)]
             text-6xl
             font-semibold
-            leading-[0.88]
+            leading-[0.94]
             tracking-tight
-            text-white
+            
             md:text-8xl
             xl:text-[6rem]
+            text-[#2B170E]
+drop-shadow-[0_3px_10px_rgba(43,23,14,.12)]
           "
         >
           Where Every
 
-          <span className="block font-light italic text-[#D4AF37]">
+          <span className="block font-light italic text-[#D9AE2F]">
             Celebration
           </span>
 
@@ -88,8 +91,8 @@ export default function HeroContent() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{
-            delay: 0.45,
-            duration: 0.6,
+            delay: 0.35,
+            duration: 0.5,
           }}
           className="relative z-10 mt-16 h-px w-24 origin-left bg-[#D4AF37]/70"
         />
@@ -99,7 +102,8 @@ export default function HeroContent() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
-            delay: 0.6,
+              delay: 0.5,
+              duration: 0.7,
           }}
           className="
             relative
@@ -108,7 +112,7 @@ export default function HeroContent() {
             max-w-md
             text-[17px]
             leading-8
-            text-white/68
+            text-[#3F2E23]
           "
         >
           Premium cakes, handcrafted desserts, and timeless recipes
@@ -120,9 +124,10 @@ export default function HeroContent() {
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.8,
-          }}
+transition={{
+  delay: 0.7,
+  duration: 0.7,
+}}
           className="relative z-10 mt-12 flex flex-wrap gap-5"
         >
           <button
@@ -172,18 +177,19 @@ export default function HeroContent() {
 
           <button
             className="
+            border-[#7A5A3B]/30
+bg-[#FFF7E7]/45
+text-[#2B170E]
+backdrop-blur-md
+hover:bg-white/35
+
               rounded-full
               border
-              border-white/15
-              bg-black/10
               px-10
               py-4
-              text-white
-              backdrop-blur-xl
               transition-all
               duration-300
               hover:border-[#D4AF37]/40
-              hover:bg-white/10
             "
           >
             Visit Bakery

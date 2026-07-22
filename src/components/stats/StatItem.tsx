@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { staggerItem } from "@/lib/animations";
 
 type StatItemProps = {
   value: number;
@@ -16,7 +17,7 @@ export default function StatItem({
   label,
   showDivider = false,
 }: StatItemProps) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const isInView = useInView(ref, {
     once: true,
@@ -30,7 +31,7 @@ export default function StatItem({
 
     let current = 0;
 
-    const duration = 1800;
+    const duration = 1200;
     const increment = Math.max(1, Math.ceil(value / 100));
     const interval = duration / 100;
 
@@ -51,21 +52,7 @@ export default function StatItem({
   return (
     <motion.div
       ref={ref}
-      variants={{
-        hidden: {
-          opacity: 0,
-          y: 40,
-          scale: 0.96,
-        },
-        show: {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-        },
-      }}
-      transition={{
-        duration: 0.7,
-      }}
+      variants={staggerItem}
       className="relative flex flex-col items-center"
     >
       <div
@@ -112,20 +99,7 @@ blur-3xl
       </p>
 
       {showDivider && (
-        <motion.div
-          initial={{
-            scaleY: 0,
-          }}
-          whileInView={{
-            scaleY: 1,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.7,
-            delay: 0.5,
-          }}
+        <div
           className="
             absolute
             right-0

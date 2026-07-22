@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   Phone,
   MapPin,
@@ -14,6 +15,44 @@ import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/config/site";
 
 export default function ContactPage() {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    eventDate: "",
+    email: "",
+    message: "",
+  });
+  const handleChange = (
+     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+   ) => {
+     setForm((prev) => ({
+       ...prev,
+       [e.target.name]: e.target.value,
+     }));
+   };
+   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const whatsappMessage = `
+    🎂 Hello ${siteConfig.name}!
+    
+    I'd like to make an inquiry.
+    
+    👤 Name: ${form.name}
+    📞 Phone: ${form.phone}
+    📧 Email: ${form.email}
+    📅 Event Date: ${form.eventDate}
+    
+    📝 Details:
+    ${form.message}
+    `;
+    
+      const url = `${siteConfig.whatsapp}?text=${encodeURIComponent(
+        whatsappMessage
+      )}`;
+    
+      window.open(url, "_blank");
+    };
   return (
     <>
       <Navbar />
@@ -69,7 +108,7 @@ export default function ContactPage() {
               Visit
 
               <span className="block italic font-light text-[#D4AF37]">
-                siteConfig.name
+                {siteConfig.name}
               </span>
             </motion.h1>
 
@@ -146,7 +185,7 @@ export default function ContactPage() {
                       </p>
 
                       <p className="text-white/60">
-                        siteConfig.phone
+                        {siteConfig.phone}
                       </p>
 
                     </div>
@@ -164,7 +203,7 @@ export default function ContactPage() {
                       </p>
 
                       <p className="text-white/60">
-                        siteConfig.address
+                        {siteConfig.address}
                       </p>
 
                     </div>
@@ -192,7 +231,7 @@ export default function ContactPage() {
                 </div>
 
                 <a
-                  href="https://wa.me/923001234567"
+                  href={siteConfig.whatsapp}
                   target="_blank"
                   className="
                     mt-12
@@ -242,80 +281,111 @@ export default function ContactPage() {
                 Send an Inquiry
               </h2>
 
-              <form className="mt-10 space-y-6">
+              <form
+                onSubmit={handleSubmit}
+                className="mt-10 space-y-6"
+              >
 
-                <input
-                  placeholder="Your Name"
-                  className="
-                  w-full
-                  rounded-xl
-                  border
-                  border-white/10
-                  bg-black/20
-                  px-5
-                  py-4
-                  outline-none
-                "
-                />
-
-                <input
-                  placeholder="Phone Number"
-                  className="
-                  w-full
-                  rounded-xl
-                  border
-                  border-white/10
-                  bg-black/20
-                  px-5
-                  py-4
-                  outline-none
-                "
-                />
-
-                <input
-                  placeholder="Event Date"
-                  className="
-                  w-full
-                  rounded-xl
-                  border
-                  border-white/10
-                  bg-black/20
-                  px-5
-                  py-4
-                  outline-none
-                "
-                />
-                                <input
-                  placeholder="Email Address"
-                  className="
-                    w-full
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-black/20
-                    px-5
-                    py-4
-                    outline-none
-                  "
-                />
-
-                <textarea
-                  placeholder="Tell us about your celebration..."
-                  rows={6}
-                  className="
-                    w-full
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-black/20
-                    px-5
-                    py-4
-                    outline-none
-                    resize-none
-                  "
-                />
+             <input
+               type="text"
+               name="name"
+               value={form.name}
+               onChange={handleChange}
+               autoComplete="name"
+               required
+               placeholder="Your Name"
+               className="
+                 w-full
+                 rounded-xl
+                 border
+                 border-white/10
+                 bg-black/20
+                 px-5
+                 py-4
+                 outline-none
+               "
+             />
+             
+             <input
+               type="tel"
+               name="phone"
+                              value={form.phone}
+               onChange={handleChange}
+               autoComplete="tel"
+               required
+               placeholder="Phone Number"
+               className="
+                 w-full
+                 rounded-xl
+                 border
+                 border-white/10
+                 bg-black/20
+                 px-5
+                 py-4
+                 outline-none
+               "
+             />
+             
+             <input
+               type="date"
+               name="eventDate"
+               value={form.eventDate}
+               onChange={handleChange}
+               required
+               className="
+                 w-full
+                 rounded-xl
+                 border
+                 border-white/10
+                 bg-black/20
+                 px-5
+                 py-4
+                 outline-none
+               "
+             />
+             <input
+               type="email"
+               name="email"
+               value={form.email}
+               onChange={handleChange}
+               autoComplete="email"
+               required
+               placeholder="Email Address"
+               className="
+                 w-full
+                 rounded-xl
+                 border
+                 border-white/10
+                 bg-black/20
+                 px-5
+                 py-4
+                 outline-none
+               "
+             />
+             
+             <textarea
+               name="message"
+               value={form.message}
+               onChange={handleChange}
+               autoComplete="off"
+               required
+               placeholder="Tell us about your celebration..."
+               rows={6}
+               className="
+                 w-full
+                 rounded-xl
+                 border
+                 border-white/10
+                 bg-black/20
+                 px-5
+                 py-4
+                 outline-none
+                 resize-none
+               "
+             />
 
                 <button
+                type="submit"
                   className="
                     w-full
                     rounded-full
@@ -395,7 +465,7 @@ export default function ContactPage() {
                     text-3xl
                   "
                 >
-                  siteConfig.address
+                  {siteConfig.address}
                 </h3>
 
                 <p className="mt-5 leading-8 text-white/60">
@@ -532,7 +602,7 @@ export default function ContactPage() {
                 </p>
 
                 <a
-                  href="https://wa.me/923001234567"
+                  href={siteConfig.whatsapp}
                   target="_blank"
                   className="
                     mt-12

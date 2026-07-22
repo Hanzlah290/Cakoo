@@ -11,6 +11,7 @@ import {
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { siteConfig } from "@/config/site";
 
 export default function ContactPage() {
   return (
@@ -68,7 +69,7 @@ export default function ContactPage() {
               Visit
 
               <span className="block italic font-light text-[#D4AF37]">
-                Cakoo Bakery
+                siteConfig.name
               </span>
             </motion.h1>
 
@@ -145,7 +146,7 @@ export default function ContactPage() {
                       </p>
 
                       <p className="text-white/60">
-                        +92 300 1234567
+                        siteConfig.phone
                       </p>
 
                     </div>
@@ -163,7 +164,7 @@ export default function ContactPage() {
                       </p>
 
                       <p className="text-white/60">
-                        Wah Cantt & Attock
+                        siteConfig.address
                       </p>
 
                     </div>
@@ -394,7 +395,7 @@ export default function ContactPage() {
                     text-3xl
                   "
                 >
-                  Wah Cantt
+                  siteConfig.address
                 </h3>
 
                 <p className="mt-5 leading-8 text-white/60">
@@ -409,7 +410,7 @@ export default function ContactPage() {
 
                   <p>7:00 AM — 11:00 PM</p>
 
-                  <p>+92 300 1234567</p>
+                  <p>{siteConfig.phone}</p>
 
                 </div>
 
@@ -453,7 +454,7 @@ export default function ContactPage() {
 
                   <p>11:00 AM — 11:00 PM</p>
 
-                  <p>+92 300 7654321</p>
+                  <p>{siteConfig.phone}</p>
 
                 </div>
 

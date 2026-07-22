@@ -1,9 +1,10 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import { motion } from "framer-motion";
 
 const words = [
-  "Cakoo Bakery",
+  siteConfig.name,
   "Luxury Pâtisserie",
   "Premium Cakes",
   "Freshly Baked",

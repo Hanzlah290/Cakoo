@@ -246,7 +246,7 @@ gap-40
   <div className="text-center w-40">
 
     <h4 className="uppercase tracking-[0.3em] text-[#D4AF37] text-sm">
-      Wah Cantt
+      siteConfig.address
     </h4>
 
     <p className="mt-4 text-white/60 text-lg">
@@ -279,9 +279,9 @@ gap-40
 <div className="text-center">
 
   <p className="text-sm text-white/35">
-    © 2026 Cakoo Bakery
+    © 2026 siteConfig.name
 
-Premium Cakes • Wah Cantt • Attock • Pakistan
+Premium Cakes • siteConfig.address • Pakistan
   </p>
 
 

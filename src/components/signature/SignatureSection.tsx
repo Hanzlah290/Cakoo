@@ -1,6 +1,6 @@
 "use client";
 
-import { featuredProducts } from "@/data/featuredProducts";
+import { featuredProducts } from "@/data/products";
 import ProductCard from "./ProductCard";
 import { motion } from "framer-motion";
 import {

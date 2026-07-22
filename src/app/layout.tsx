@@ -16,6 +16,7 @@ const italiana = Italiana({
 });
 
 import "./globals.css";
+import { siteConfig } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,8 +41,8 @@ const bodoni = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: "Cakoo Bakery",
-  description: "Luxury Bakery Website",
+  title: siteConfig.name,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({

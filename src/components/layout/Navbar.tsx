@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 const links = [
   {
@@ -111,7 +112,7 @@ export default function Navbar() {
         >
           <Image
             src="/images/cakoo-v1.png"
-            alt="Cakoo Bakery"
+            alt={siteConfig.name}
             width={280}
             height={110}
             priority

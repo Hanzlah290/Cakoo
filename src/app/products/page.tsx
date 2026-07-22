@@ -14,73 +14,14 @@ import {
   viewport,
 } from "@/lib/animations";
 
+import {
+  products,
+  categories,
+} from "@/data/products";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const categories = [
-  "All",
-  "Birthday",
-  "Chocolate",
-  "Cheesecake",
-  "Desserts",
-];
-
-const products = [
-  {
-    id: 1,
-    name: "Blueberry Bliss",
-    category: "Cheesecake",
-    price: "Rs. 3,800",
-    image: "/images/products/blueberry.png",
-    description:
-      "Creamy cheesecake layered with fresh blueberries.",
-  },
-  {
-    id: 2,
-    name: "Belgian Chocolate",
-    category: "Chocolate",
-    price: "Rs. 3,200",
-    image: "/images/products/belgian.jpeg",
-    description:
-      "Rich Belgian chocolate finished with silky ganache.",
-  },
-  {
-    id: 3,
-    name: "New York Cheesecake",
-    category: "Cheesecake",
-    price: "Rs. 2,900",
-    image: "/images/products/cheesecake.jpeg",
-    description:
-      "Classic baked cheesecake with buttery biscuit base.",
-  },
-  {
-    id: 4,
-    name: "Chocolate Fudge",
-    category: "Birthday",
-    price: "Rs. 3,600",
-    image: "/images/products/fudge.jpeg",
-    description:
-      "Decadent chocolate cake perfect for celebrations.",
-  },
-  {
-    id: 5,
-    name: "Lotus Cake",
-    category: "Desserts",
-    price: "Rs. 3,900",
-    image: "/images/products/lotus.jpeg",
-    description:
-      "Creamy lotus filling with caramel biscuit layers.",
-  },
-  {
-    id: 6,
-    name: "Ferrero Cake",
-    category: "Chocolate",
-    price: "Rs. 4,200",
-    image: "/images/products/ferrero.jpeg",
-    description:
-      "Premium Ferrero Rocher inspired celebration cake.",
-  },
-];
 
 export default function ProductsPage() {
   const [category, setCategory] = useState("All");

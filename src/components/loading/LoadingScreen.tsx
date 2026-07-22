@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -165,7 +166,7 @@ transition={{
 >
     <Image
       src="/images/cakoo-v3.png"
-      alt="Cakoo Bakery"
+      alt={siteConfig.name}
       width={260}
       height={110}
       priority

@@ -112,6 +112,7 @@ pointer-events-none
           </span>
 
           <button
+            disabled={true}
             className="
               rounded-full
               border
@@ -125,6 +126,10 @@ pointer-events-none
               hover:border-[#D4AF37]
               hover:bg-[#D4AF37]
               hover:text-[#120C09]
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-[#D4AF37]
+              focus-visible:ring-offset-2
             "
           >
             Order

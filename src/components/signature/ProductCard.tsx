@@ -9,6 +9,7 @@ type Product = {
   price: string;
   image: string;
   featured: boolean;
+  highlight: boolean;
 };
 
 export default function ProductCard({
@@ -36,13 +37,13 @@ export default function ProductCard({
         transition-all
         duration-500
         ${
-          product.featured
-            ? "scale-[1.08] border-[#D4AF37]/40 bg-[#342116]/90"
+          product.highlight
+            ? "scale-[1.08] -translate-y-6 border-[#D4AF37]/40 bg-[#342116]/90 shadow-2xl shadow-[#D4AF37]/15"
             : "border-white/6 bg-[#2A1A13]/80"
         }
       `}
     >
-      {product.featured && (
+      {product.highlight && (
         <div
           className="
             absolute

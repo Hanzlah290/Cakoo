@@ -1,14 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { siteConfig } from "@/config/site";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const links = [
-  { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
-  { name: "Contact", href: "/contact" },
-];
+
 
 export default function Footer() {
   return (
@@ -34,6 +30,8 @@ export default function Footer() {
       "
     >
   <svg
+    aria-hidden="true"
+    focusable="false"
     viewBox="0 0 1440 120"
     className="block w-full h-33"
     preserveAspectRatio="none"
@@ -117,7 +115,8 @@ export default function Footer() {
   "
 >
 
-  <h1
+  <div
+    aria-hidden="true"
     className="
       font-[family:var(--font-heading)]
       text-[190px]
@@ -129,13 +128,13 @@ export default function Footer() {
     "
   >
     CAKOO
-  </h1>
+  </div>
 
 </div>
 
         {/* Logo */}
 
-          <p
+          <div
     className="
       mt-3
       text-xs
@@ -166,7 +165,7 @@ blur-[90px]
 />
 
 
-  </p>
+  </div>
 
         <motion.div
 initial={{
@@ -251,7 +250,7 @@ gap-40
   <div className="text-center w-40">
 
     <h4 className="uppercase tracking-[0.3em] text-[#D4AF37] text-sm">
-      Wah Cantt
+      {siteConfig.address}
     </h4>
 
     <p className="mt-4 text-white/60 text-lg">
@@ -277,24 +276,21 @@ gap-40
   </div>
 
 </div>
-<div className="mt-4 text-center">
-
-  <div className="mx-auto mb-10 h-px max-w-md bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-<div className="text-center">
-
-  <p className="text-sm text-white/35">
-    © 2026 Cakoo Bakery
-
-Premium Cakes • Wah Cantt • Attock • Pakistan
-  </p>
-
-
-
-</div>
-
-</div>
-      </div>
+     <div className="mt-4 text-center">
+     
+       <div className="mx-auto mb-10 h-px max-w-md bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+     
+         <div className="text-center">
+         
+           <p className="text-sm text-white/35">
+             © 2026 {siteConfig.name}
+         
+             Premium Cakes • {siteConfig.address} • Pakistan
+           </p>
+         
+         </div>
+       </div>
+     </div>
     </footer>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function HeroContent() {
   return (
@@ -130,6 +131,7 @@ transition={{
 }}
           className="relative z-10 mt-12 flex flex-wrap gap-5"
         >
+      <Link href="/products">
           <button
             className="
               group
@@ -174,15 +176,17 @@ transition={{
               "
             />
           </button>
-
+          </Link>
+        
+          
+         <Link href="/contact">
           <button
             className="
-            border-[#7A5A3B]/30
-bg-[#FFF7E7]/45
-text-[#2B170E]
-backdrop-blur-md
-hover:bg-white/35
-
+              border-[#7A5A3B]/30
+              bg-[#FFF7E7]/45
+              text-[#2B170E]
+              backdrop-blur-md
+              hover:bg-white/35
               rounded-full
               border
               px-10
@@ -194,6 +198,7 @@ hover:bg-white/35
           >
             Visit Bakery
           </button>
+      </Link>
         </motion.div>
       </div>
     </div>

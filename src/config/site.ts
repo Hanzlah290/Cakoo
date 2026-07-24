@@ -4,6 +4,9 @@ export const siteConfig = {
   description:
     "Premium handcrafted cakes, desserts, and celebration treats made with passion.",
 
+  ogImage: "/logo/logo.svg",  
+  links: { favicon: "/logo/logo.svg" },
+
   phone: "+92 300 1234567",
 
   email: "hello@cakoo.com",

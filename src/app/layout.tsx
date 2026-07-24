@@ -43,6 +43,9 @@ const bodoni = Bodoni_Moda({
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
+    icons: {
+    icon: siteConfig.links.favicon, 
+  },
 };
 
 export default function RootLayout({
@@ -58,10 +61,10 @@ export default function RootLayout({
         ${geistMono.variable}
         ${cormorant.variable}
         ${bodoni.variable}
-${geistSans.variable}
-${geistMono.variable}
-${cormorant.variable}
-${italiana.variable}
+        ${geistSans.variable}
+        ${geistMono.variable}
+        ${cormorant.variable}
+        ${italiana.variable}
 
       `}
     >

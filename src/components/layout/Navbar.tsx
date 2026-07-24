@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 const links = [
   {
@@ -111,7 +112,7 @@ export default function Navbar() {
         >
           <Image
             src="/images/cakoo-v1.png"
-            alt="Cakoo Bakery"
+            alt={siteConfig.name}
             width={280}
             height={110}
             priority
@@ -126,7 +127,10 @@ export default function Navbar() {
 
         {/* Navigation */}
 
-        <nav className="hidden items-center gap-16 md:flex">
+        <nav
+          aria-label="Primary navigation"
+          className="hidden items-center gap-16 md:flex"
+        >
           {links.map((link) => {
             const active = pathname === link.href;
 
@@ -134,6 +138,7 @@ export default function Navbar() {
               <Link
                 key={link.title}
                 href={link.href}
+                aria-current={active ? "page" : undefined}
                 className="
                   group
                   relative
@@ -146,18 +151,19 @@ export default function Navbar() {
                   font-medium
                 "
               >
-<span
-  className={`
-    inline-block
-    transition-all
-    duration-300
-    ${
-      active
-        ? "text-[#D4AF37]"
-        : "text-[#2B170E] group-hover:text-[#D4AF37] group-hover:-translate-y-[2px]"
-    }
-  `}
->
+
+               <span
+                 className={`
+                   inline-block
+                   transition-all
+                   duration-300
+                   ${
+                     active
+                       ? "text-[#D4AF37]"
+                       : "text-[#2B170E] group-hover:text-[#D4AF37] focus-visible:outline-none focus-visible:text-[#D4AF37] focus-visible:ring-2 focus-visible:ring-[#D4AF37]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2B170E] rounded-md group-hover:-translate-y-[2px]"
+                   }
+                 `}
+               >
                   {link.title}
                 </span>
               </Link>

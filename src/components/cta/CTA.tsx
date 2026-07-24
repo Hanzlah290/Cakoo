@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   fadeUp,
   viewport,
 } from "@/lib/animations";
+import { siteConfig } from "@/config/site";
 
 export default function CTA() {
   return (
@@ -70,7 +72,7 @@ blur-[120px]
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="relative z-20"
+          className="relative z-40"
         >
           <p
             className="
@@ -132,50 +134,58 @@ blur-[120px]
             for creating unforgettable celebrations.
           </p>
 
-          <div className="mt-14 flex justify-center gap-5 flex-wrap">
+<div className="mt-14 flex justify-center gap-5 flex-wrap">
+  <a
+    href={siteConfig.whatsapp}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-flex
+      items-center
+      justify-center
+      rounded-full
+      bg-gradient-to-r
+      from-[#BF8D1B]
+      via-[#D4AF37]
+      to-[#F1D882]
+      px-10
+      py-5
+      font-semibold
+      text-[#120C09]
+      shadow-lg
+      shadow-[#D4AF37]/20
+      transition-all
+      duration-300
+      hover:scale-[1.02]
+      hover:shadow-[#D4AF37]/35
+    "
+  >
+    Order on WhatsApp
+  </a>
 
-            <button
-className="
-rounded-full
-bg-gradient-to-r
-from-[#BF8D1B]
-via-[#D4AF37]
-to-[#F1D882]
-px-10
-py-5
-font-semibold
-text-[#120C09]
-shadow-lg
-shadow-[#D4AF37]/20
-transition-all
-duration-300
-hover:scale-[1.02]
-hover:shadow-[#D4AF37]/35
-"
-            >
-              Order on WhatsApp
-            </button>
-
-            <button
-              className="
-                rounded-full
-                border
-                px-10
-                py-5
-                border-[#2A1A13]/10
-bg-white/70
-text-[#1B130D]
-hover:bg-white/90
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:border-[#D4AF37]/40
-              "
-            >
-              View Products
-            </button>
-
-          </div>
+  <Link
+    href="/contact"
+    className="
+      inline-flex
+      items-center
+      justify-center
+      rounded-full
+      border
+      border-[#2A1A13]/10
+      bg-white/70
+      px-10
+      py-5
+      text-[#1B130D]
+      backdrop-blur-xl
+      transition-all
+      duration-300
+      hover:bg-white/90
+      hover:border-[#D4AF37]/40
+    "
+  >
+    Contact Us
+  </Link>
+</div>
         </motion.div>
 
         {/* Luxury Ring */}
@@ -287,6 +297,7 @@ hover:bg-white/90
             bottom-[0px]
             left-1/2
             z-30
+            -pointer-events-none
             -translate-x-1/2
           "
         >

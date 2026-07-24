@@ -8,7 +8,10 @@ import HeroImage from "./HeroImage";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section 
+    id="hero-heading"
+    aria-labelledby="hero-heading"
+    className="relative h-screen overflow-hidden">
 
       <HeroBackground />
       <FloatingParticles />

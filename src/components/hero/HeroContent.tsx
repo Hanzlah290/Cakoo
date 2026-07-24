@@ -42,18 +42,19 @@ export default function HeroContent() {
 
 
         <div
-  className="
-    absolute
-    -left-24
-    top-16
-    h-[420px]
-    w-[420px]
-    rounded-full
-    bg-[#D4AF37]/10
-    blur-[120px]
-    -z-10
-  "
-/>
+        aria-hidden="true"
+        className="
+          absolute
+          -left-24
+          top-16
+          h-[420px]
+          w-[420px]
+          rounded-full
+          bg-[#D4AF37]/10
+          blur-[120px]
+          -z-10
+        "
+      />
 
         {/* Heading */}
         <motion.h1
@@ -75,7 +76,7 @@ export default function HeroContent() {
             md:text-8xl
             xl:text-[6rem]
             text-[#2B170E]
-drop-shadow-[0_3px_10px_rgba(43,23,14,.12)]
+            drop-shadow-[0_3px_10px_rgba(43,23,14,.12)]
           "
         >
           Where Every
@@ -125,15 +126,15 @@ drop-shadow-[0_3px_10px_rgba(43,23,14,.12)]
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-transition={{
-  delay: 0.7,
-  duration: 0.7,
-}}
+          transition={{
+            delay: 0.7,
+            duration: 0.7,
+          }}
           className="relative z-10 mt-12 flex flex-wrap gap-5"
         >
-      <Link href="/products">
-          <button
-            className="
+      <Link 
+        href="/products"
+        className="
               group
               relative
               overflow-hidden
@@ -151,8 +152,7 @@ transition={{
               duration-500
               hover:-translate-y-1
               hover:shadow-[0_20px_45px_rgba(212,175,55,.35)]
-            "
-          >
+            ">
             <span className="relative z-10 flex items-center gap-2">
               Explore Collection
 
@@ -175,13 +175,12 @@ transition={{
                 group-hover:left-[120%]
               "
             />
-          </button>
           </Link>
         
           
-         <Link href="/contact">
-          <button
-            className="
+         <Link 
+           href="/contact"
+           className="
               border-[#7A5A3B]/30
               bg-[#FFF7E7]/45
               text-[#2B170E]
@@ -194,10 +193,8 @@ transition={{
               transition-all
               duration-300
               hover:border-[#D4AF37]/40
-            "
-          >
+            ">
             Visit Bakery
-          </button>
       </Link>
         </motion.div>
       </div>

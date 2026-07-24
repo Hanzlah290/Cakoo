@@ -17,31 +17,32 @@ export default function HeroImage() {
           y: [0, -9, 0],
           rotate: [0, -0.5, 0.5, 0],
         }}
-transition={{
-  opacity: {
-    delay: 0.9,
-    duration: 0.8,
-  },
-  scale: {
-    duration: 8,
-    repeat: Infinity,
-    ease: "easeInOut",
-  },
-  y: {
-    duration: 8,
-    repeat: Infinity,
-    ease: "easeInOut",
-  },
-  rotate: {
-    duration: 10,
-    repeat: Infinity,
-    ease: "easeInOut",
-  },
-}}
-            className="relative mt-20 flex flex-1 justify-end md:mt-0 pr-10 lg:pr-20"
-          >
+        transition={{
+          opacity: {
+            delay: 0.9,
+            duration: 0.8,
+          },
+          scale: {
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+          y: {
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+          rotate: {
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        }}
+        className="relative mt-20 flex flex-1 justify-end md:mt-0 pr-10 lg:pr-20"
+       >
 {/* Ambient Chocolate Glow */}
 <div
+aria-hidden="true"
   className="
     absolute
     bottom-2
@@ -58,6 +59,7 @@ transition={{
 
 {/* Ground Shadow */}
 <div
+aria-hidden="true"
   className="
     absolute
     bottom-10
@@ -73,6 +75,7 @@ transition={{
 
 {/* Warm Glow Behind Cake */}
 <div
+aria-hidden="true"
   className="
     absolute
     top-[5%]
@@ -88,7 +91,7 @@ transition={{
 />
       <Image
         src="/images/hero-cake.png"
-        alt="Lava Cake"
+        alt="Cakoo Bakery signature chocolate lava cake."
         width={650}
         height={650}
         priority

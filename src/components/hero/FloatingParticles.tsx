@@ -22,6 +22,7 @@ export default function FloatingParticles() {
     <>
       {PARTICLES.map((particle, index) => (
         <motion.div
+        aria-hidden="true"
           key={index}
           initial={{
             opacity: 0,

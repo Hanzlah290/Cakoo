@@ -15,6 +15,7 @@ import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/config/site";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -30,29 +31,44 @@ export default function ContactPage() {
        [e.target.name]: e.target.value,
      }));
    };
-   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
 
-  const whatsappMessage = `
-    🎂 Hello ${siteConfig.name}!
+   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+     e.preventDefault();
+   
+     setIsSubmitting(true);
+   
+     const whatsappMessage = `
+   🎂 Hello ${siteConfig.name}!
+   
+   I'd like to make an inquiry.
+   
+   👤 Name: ${form.name}
+   📞 Phone: ${form.phone}
+   📧 Email: ${form.email}
+   📅 Event Date: ${form.eventDate}
+   
+   📝 Details:
+   ${form.message}
+   `;
+   
+     const url = `${siteConfig.whatsapp}?text=${encodeURIComponent(
+       whatsappMessage
+     )}`;
+   
+     window.open(url, "_blank");
+     setForm({
+       name: "",
+       phone: "",
+       eventDate: "",
+       email: "",
+       message: "",
+     });
+   
+     setTimeout(() => {
+       setIsSubmitting(false);
+     }, 1000);
+   };
     
-    I'd like to make an inquiry.
-    
-    👤 Name: ${form.name}
-    📞 Phone: ${form.phone}
-    📧 Email: ${form.email}
-    📅 Event Date: ${form.eventDate}
-    
-    📝 Details:
-    ${form.message}
-    `;
-    
-      const url = `${siteConfig.whatsapp}?text=${encodeURIComponent(
-        whatsappMessage
-      )}`;
-    
-      window.open(url, "_blank");
-    };
   return (
     <>
       <Navbar />
@@ -233,6 +249,7 @@ export default function ContactPage() {
                 <a
                   href={siteConfig.whatsapp}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="
                     mt-12
                     inline-flex
@@ -285,9 +302,16 @@ export default function ContactPage() {
                 onSubmit={handleSubmit}
                 className="mt-10 space-y-6"
               >
-
+             <div>
+               <label
+               htmlFor="name"
+               className="mb-2 block text-sm font-medium text-white/80"
+             >
+               Your Name
+             </label>
              <input
                type="text"
+               id="name"
                name="name"
                value={form.name}
                onChange={handleChange}
@@ -303,13 +327,27 @@ export default function ContactPage() {
                  px-5
                  py-4
                  outline-none
+                 focus:border-[#D4AF37]
+                 focus:ring-2
+                 focus:ring-[#D4AF37]/20
+                 transition
                "
              />
-             
+             </div>
+
+
+             <div>
+             <label
+               htmlFor="phone"
+               className="mb-2 block text-sm font-medium text-white/80"
+             >
+               Phone Number
+             </label>
              <input
                type="tel"
+               id="phone"
                name="phone"
-                              value={form.phone}
+               value={form.phone}
                onChange={handleChange}
                autoComplete="tel"
                required
@@ -323,14 +361,28 @@ export default function ContactPage() {
                  px-5
                  py-4
                  outline-none
+                 focus:border-[#D4AF37]
+                 focus:ring-2
+                 focus:ring-[#D4AF37]/20
+                 transition
                "
              />
-             
+             </div>
+
+             <div>
+             <label
+               htmlFor="eventDate"
+               className="mb-2 block text-sm font-medium text-white/80"
+             >
+               Event Date
+             </label>
              <input
                type="date"
+               id="eventDate"
                name="eventDate"
                value={form.eventDate}
                onChange={handleChange}
+               min={new Date().toISOString().split("T")[0]}
                required
                className="
                  w-full
@@ -341,10 +393,24 @@ export default function ContactPage() {
                  px-5
                  py-4
                  outline-none
+                 focus:border-[#D4AF37]
+                 focus:ring-2
+                 focus:ring-[#D4AF37]/20
+                 transition
                "
              />
+             </div>
+
+             <div>
+               <label
+               htmlFor="email"
+               className="mb-2 block text-sm font-medium text-white/80"
+             >
+               Your Email
+             </label>
              <input
                type="email"
+               id="email"
                name="email"
                value={form.email}
                onChange={handleChange}
@@ -360,11 +426,24 @@ export default function ContactPage() {
                  px-5
                  py-4
                  outline-none
+                 focus:border-[#D4AF37]
+                 focus:ring-2
+                 focus:ring-[#D4AF37]/20
+                 transition
                "
              />
-             
+            </div>
+
+            <div>
+             <label
+               htmlFor="message"
+               className="mb-2 block text-sm font-medium text-white/80"
+             >
+               Your Message
+             </label>
              <textarea
                name="message"
+               id="message"
                value={form.message}
                onChange={handleChange}
                autoComplete="off"
@@ -380,30 +459,37 @@ export default function ContactPage() {
                  px-5
                  py-4
                  outline-none
+                 focus:border-[#D4AF37]
+                 focus:ring-2
+                 focus:ring-[#D4AF37]/20
+                 transition
                  resize-none
                "
              />
-
-                <button
-                type="submit"
-                  className="
-                    w-full
-                    rounded-full
-                    bg-gradient-to-r
-                    from-[#BF8D1B]
-                    via-[#D4AF37]
-                    to-[#F1D882]
-                    py-4
-                    font-semibold
-                    text-[#120C09]
-                    transition-all
-                    duration-300
-                    hover:scale-[1.02]
-                    hover:shadow-[0_15px_40px_rgba(212,175,55,.35)]
-                  "
-                >
-                  Send Inquiry
-                </button>
+            </div>
+             <button
+               type="submit"
+               disabled={isSubmitting}
+               className="
+                 w-full
+                 rounded-full
+                 bg-gradient-to-r
+                 from-[#BF8D1B]
+                 via-[#D4AF37]
+                 to-[#F1D882]
+                 py-4
+                 font-semibold
+                 text-[#120C09]
+                 transition-all
+                 duration-300
+                 hover:scale-[1.02]
+                 hover:shadow-[0_15px_40px_rgba(212,175,55,.35)]
+                 disabled:cursor-not-allowed
+                 disabled:opacity-70
+               "
+             >
+               {isSubmitting ? "Opening WhatsApp..." : "Send Inquiry"}
+             </button>
 
               </form>
 
@@ -604,6 +690,7 @@ export default function ContactPage() {
                 <a
                   href={siteConfig.whatsapp}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="
                     mt-12
                     inline-flex

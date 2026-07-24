@@ -21,6 +21,7 @@ import {
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { siteConfig } from "@/config/site";
 
 
 export default function ProductsPage() {
@@ -56,6 +57,7 @@ export default function ProductsPage() {
       >
 
         <div
+        aria-hidden="true"
           className="
             absolute
             -left-44
@@ -70,6 +72,7 @@ export default function ProductsPage() {
         />
 
         <div
+        aria-hidden="true"
           className="
             absolute
             right-[-180px]
@@ -95,6 +98,7 @@ export default function ProductsPage() {
         >
 
           <div
+          aria-hidden="true"
             className="
             -translate-x-1/2
             absolute
@@ -141,13 +145,13 @@ export default function ProductsPage() {
             >
               Sweet
 
-<motion.span
-  variants={fadeUp}
-  transition={{
-    delay: 0.15,
-  }}
-  className="block italic font-light text-[#D4AF37]"
->
+            <motion.span
+              variants={fadeUp}
+              transition={{
+                delay: 0.15,
+              }}
+              className="block italic font-light text-[#D4AF37]"
+            >
                 Creations
               </motion.span>
 
@@ -185,6 +189,7 @@ export default function ProductsPage() {
                 {categories.map((item) => (
 
                   <button
+                    aria-pressed={category === item}
                     key={item}
                     onClick={() => setCategory(item)}
                     className={`
@@ -211,6 +216,7 @@ export default function ProductsPage() {
               <div className="relative w-full lg:w-[350px]">
 
                 <Search
+                  aria-hidden="true"
                   className="
                   absolute
                   left-5
@@ -219,8 +225,16 @@ export default function ProductsPage() {
                   text-[#8A7B6A]
                 "
                 />
-
+                
+                <label
+                  htmlFor="product-search"
+                  className="sr-only"
+                >
+                  Search products
+                </label>
                 <input
+                  id="product-search"
+                  type="text"
                   value={search}
                   onChange={(e) =>
                     setSearch(e.target.value)
@@ -249,6 +263,7 @@ export default function ProductsPage() {
             </div>
 
             <div
+            aria-hidden="true"
               className="
               mt-10
               flex
@@ -266,6 +281,7 @@ export default function ProductsPage() {
             >
 
               <AlertTriangle
+              aria-hidden="true"
                 className="text-[#D4AF37]"
               />
 
@@ -285,6 +301,7 @@ export default function ProductsPage() {
         {/* Product Grid */}
 
         <div
+        aria-hidden="true"
           className="
             absolute
             left-[-220px]
@@ -299,6 +316,7 @@ export default function ProductsPage() {
         />
 
         <div
+        aria-hidden="true"
           className="
             absolute
             right-[-260px]
@@ -375,6 +393,7 @@ export default function ProductsPage() {
                     {/* Gold Glow */}
 
                     <div
+                    aria-hidden="true"
                       className="
                         absolute
                         -right-20
@@ -394,6 +413,7 @@ export default function ProductsPage() {
                     {/* Image */}
 
                     <div
+                    aria-hidden="true"
                       className="
                         relative
                         h-[320px]
@@ -486,6 +506,7 @@ export default function ProductsPage() {
                         </div>
 
                         <button
+                        disabled={true}
                           className="
                             group/button
                             relative
@@ -506,6 +527,7 @@ export default function ProductsPage() {
                         >
 
                           <span
+                          
                             className="
                               relative
                               z-10
@@ -577,6 +599,7 @@ export default function ProductsPage() {
               >
 
                 <RotateCcw
+                aria-hidden="true"
                   size={42}
                   className="mb-6 text-[#D4AF37]"
                 />
@@ -636,6 +659,7 @@ export default function ProductsPage() {
         {/* ======================================= */}
         {/* CTA */}
         <div
+        aria-hidden="true"
           className="
             absolute
             left-[-180px]
@@ -649,6 +673,7 @@ export default function ProductsPage() {
           "
         />
         <div
+        aria-hidden="true"
           className="
             absolute
             right-[-220px]
@@ -668,6 +693,7 @@ export default function ProductsPage() {
           <div className="mx-auto max-w-7xl px-8 lg:px-16">
 
           <div
+          aria-hidden="true"
             className="
               relative
               overflow-hidden
@@ -682,6 +708,7 @@ export default function ProductsPage() {
           >
 
             <div
+            aria-hidden="true"
               className="
                 absolute
                 left-1/2
@@ -734,7 +761,8 @@ export default function ProductsPage() {
               </p>
 
               <a
-                href="https://wa.me/923001234567"
+                href={siteConfig.whatsapp}
+                rel="noopener noreferrer"
                 target="_blank"
                 className="
                   mt-12
@@ -758,7 +786,9 @@ export default function ProductsPage() {
               >
                 Request Custom Cake
 
-                <ArrowRight size={18} />
+                <ArrowRight 
+                aria-hidden="true"
+                size={18} />
               </a>
 
             </div>

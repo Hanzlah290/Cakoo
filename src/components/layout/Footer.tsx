@@ -29,25 +29,25 @@ export default function Footer() {
         z-20
       "
     >
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    viewBox="0 0 1440 120"
-    className="block w-full h-33"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="#382116"
-      d="
-       M0,120
-       C180,70 420,20 720,70
-       C1020,120 1260,70 1440,95
-       L1440,120
-       L0,120
-       Z
-      "
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 1440 120"
+      className="block w-full h-33"
+      preserveAspectRatio="none"
+    >
+      <path
+        fill="#382116"
+        d="
+         M0,120
+         C180,70 420,20 720,70
+         C1020,120 1260,70 1440,95
+         L1440,120
+         L0,120
+         Z
+        "
+      />
+    </svg>
 
   
 </div>

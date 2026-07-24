@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 type Product = {
   name: string;
@@ -18,16 +15,11 @@ export default function ProductCard({
   product: Product;
 }) {
   return (
-    <motion.div
-      whileHover={{
-        y: -8,
-      }}
-      
-      transition={{
-        duration: 0.4,
-        ease: "easeOut",
-      }}
+    <div
       className={`
+        transition-transform
+        duration-300
+        hover:-translate-y-2
         group
         relative
         overflow-hidden
@@ -68,19 +60,20 @@ export default function ProductCard({
       <div className="relative h-[320px] overflow-hidden">
 
         <div
-className="
-absolute
-inset-0
-bg-gradient-to-b
-from-white/5
-to-transparent
-pointer-events-none
-"
-/>
+         className="
+         absolute
+         inset-0
+         bg-gradient-to-b
+         from-white/5
+         to-transparent
+         pointer-events-none
+         "
+         />
         <Image
           src={product.image}
           alt={product.name}
           fill
+          sizes="(max-width: 1024px) 100vw, 33vw"
           className="
             object-cover
             transition-transform
@@ -136,6 +129,6 @@ pointer-events-none
           </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

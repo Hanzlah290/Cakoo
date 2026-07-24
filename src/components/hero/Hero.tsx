@@ -1,5 +1,3 @@
-"use client";
-
 import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import ScrollIndicator from "../ui/ScrollIndicator";

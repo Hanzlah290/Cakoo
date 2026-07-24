@@ -72,7 +72,6 @@ export default function StatItem({
       />
 
       <h3
-      aria-live="polite"
         className="
           font-[family:var(--font-heading)]
           text-6xl

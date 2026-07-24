@@ -57,9 +57,6 @@ export default function RootLayout({
     <html
       lang="en"
       className={`
-        ${geistSans.variable}
-        ${geistMono.variable}
-        ${cormorant.variable}
         ${bodoni.variable}
         ${geistSans.variable}
         ${geistMono.variable}

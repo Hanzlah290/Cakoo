@@ -24,6 +24,7 @@ export default function CTA() {
   
 
 <div
+aria-hidden="true"
 className="
 relative
 mx-auto
@@ -38,6 +39,7 @@ pb-[320px]
 
         {/* Main Gold Glow */}
 <div
+aria-hidden="true"
 className="
 absolute
 left-1/2
@@ -52,6 +54,7 @@ blur-[180px]
 "
 />
 <div
+aria-hidden="true"
 className="
 absolute
 left-[15%]
@@ -107,17 +110,18 @@ blur-[120px]
           </h2>
 
           <div
-  className="
-    mx-auto
-    mt-12
-    h-px
-    w-28
-    bg-gradient-to-r
-    from-transparent
-    via-[#D4AF37]
-    to-transparent
-  "
-/>
+          aria-hidden="true"
+            className="
+              mx-auto
+              mt-12
+              h-px
+              w-28
+              bg-gradient-to-r
+              from-transparent
+              via-[#D4AF37]
+              to-transparent
+            "
+          />
 
           <p
             className="
@@ -158,6 +162,10 @@ blur-[120px]
       duration-300
       hover:scale-[1.02]
       hover:shadow-[#D4AF37]/35
+      focus-visible:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-[#D4AF37]
+      focus-visible:ring-offset-2
     "
   >
     Order on WhatsApp
@@ -181,6 +189,10 @@ blur-[120px]
       duration-300
       hover:bg-white/90
       hover:border-[#D4AF37]/40
+      focus-visible:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-[#D4AF37]
+      focus-visible:ring-offset-2
     "
   >
     Contact Us
@@ -262,6 +274,7 @@ blur-[120px]
 
 
           <div
+          aria-hidden="true"
           className="
           absolute
           left-1/2
@@ -302,6 +315,7 @@ blur-[120px]
           "
         >
           <div
+          aria-hidden="true"
             className="
               absolute
               left-1/2
@@ -316,18 +330,19 @@ blur-[120px]
           />
 
           <motion.div
-  animate={{
-    y: [0, -6, 0],
-  }}
-  transition={{
-    duration: 5,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
->
+            aria-hidden="true"
+            animate={{
+               y: [0, -6, 0],
+             }}
+             transition={{
+               duration: 5,
+               repeat: Infinity,
+               ease: "easeInOut",
+             }}
+           >
         <Image
           src="/images/cta-cake.png"
-          alt="Premium Cake"
+          alt="Elegant handcrafted celebration cake from Cakoo Bakery"
           width={350}
           height={350}
           className="

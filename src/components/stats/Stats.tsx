@@ -21,6 +21,7 @@ export default function Stats() {
 
       {/* Ambient Gold Glow */}
       <div
+      aria-hidden="true"
       className="
       absolute
       left-[53%]
@@ -36,6 +37,7 @@ export default function Stats() {
       />
       
       <div
+      aria-hidden="true"
       className="
       absolute
       left-1/2
@@ -50,6 +52,7 @@ export default function Stats() {
       />
       
       <div
+      aria-hidden="true"
       className="
       absolute
       -left-40
@@ -64,6 +67,7 @@ export default function Stats() {
       />
       
       <div
+      aria-hidden="true"
       className="
       absolute
       left-[-10%]

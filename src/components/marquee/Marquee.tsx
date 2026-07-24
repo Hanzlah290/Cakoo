@@ -26,7 +26,8 @@ export default function Marquee() {
         border-[#D8C9B4]
         "
         >
-              <div
+      <div
+        aria-hidden="true"
         className="
         absolute
         left-1/2
@@ -42,6 +43,7 @@ export default function Marquee() {
         />
         {/* Left Fade */}
          <div
+         aria-hidden="true"
            className="
              pointer-events-none
              absolute
@@ -58,6 +60,7 @@ export default function Marquee() {
          
          {/* Right Fade */}
          <div
+         aria-hidden="true"
            className="
              pointer-events-none
              absolute
@@ -73,6 +76,7 @@ export default function Marquee() {
          />
 
          <div
+             aria-hidden="true"
              className="
                  absolute
                  inset-0
@@ -88,6 +92,7 @@ export default function Marquee() {
          />
 
       <motion.div
+      aria-hidden="true"
         animate={{
           x: ["0%", "-50%"],
         }}
@@ -103,7 +108,7 @@ export default function Marquee() {
             key={index}
             className="flex items-center whitespace-nowrap"
           >
-            <h2
+            <span
              className="
              font-[family:var(--font-heading)]
              text-[95px]
@@ -116,7 +121,7 @@ export default function Marquee() {
              "
             >
               {word}
-            </h2>
+            </span>
 
             <motion.span
                 animate={{

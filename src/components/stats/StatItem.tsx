@@ -56,19 +56,20 @@ export default function StatItem({
       className="relative flex flex-col items-center"
     >
       <div
-className="
-absolute
-left-1/2
-top-1/2
-h-32
-w-32
--translate-x-1/2
--translate-y-1/2
-rounded-full
-bg-[#D4AF37]/5
-blur-3xl
-"
-/>
+      aria-hidden="true"
+      className="
+      absolute
+      left-1/2
+      top-1/2
+      h-32
+      w-32
+      -translate-x-1/2
+      -translate-y-1/2
+      rounded-full
+      bg-[#D4AF37]/5
+      blur-3xl
+      "
+      />
 
       <h3
         className="

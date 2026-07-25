@@ -1,5 +1,3 @@
-"use client";
-
 import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import ScrollIndicator from "../ui/ScrollIndicator";
@@ -8,7 +6,10 @@ import HeroImage from "./HeroImage";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section 
+    id="hero-heading"
+    aria-labelledby="hero-heading"
+    className="relative h-screen overflow-hidden">
 
       <HeroBackground />
       <FloatingParticles />

@@ -101,3 +101,82 @@ html.lenis body {
 html {
   scroll-behavior: smooth;
 }
+
+/* ============================
+   CTA Animations
+============================ */
+
+@keyframes rotateSlow {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 90s linear infinite;
+}
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: .2;
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: .2;
+  }
+}
+
+.animate-sparkle-float {
+  animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+@keyframes sparkleRotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: .2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: .2;
+  }
+}
+
+.animate-sparkle-rotate {
+  animation: sparkleRotate 7s linear infinite;
+}
+@keyframes footerGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.08;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.15;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.08;
+  }
+}
+
+.animate-footer-glow {
+  animation: footerGlow 9s ease-in-out infinite;
+}

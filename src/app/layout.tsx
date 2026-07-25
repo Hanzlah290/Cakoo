@@ -8,6 +8,7 @@ import {
 import SmoothScroll from "@/components/providers/SmoothScroll";
 
 import { Italiana } from "next/font/google";
+import StructuredData from "@/components/seo/StructuredData";
 
 const italiana = Italiana({
   subsets: ["latin"],
@@ -41,8 +42,69 @@ const bodoni = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
+  metadataBase: new URL("https://cakoo.com"), // Change to your real domain later
+
+  title: {
+    default: siteConfig.name,
+    template: "%s | Cakoo Bakery",
+  },
+
   description: siteConfig.description,
+
+  keywords: [
+    "Bakery",
+    "Cakes",
+    "Custom Cakes",
+    "Birthday Cakes",
+    "Wedding Cakes",
+    "Desserts",
+    "Attock Bakery",
+    "Pakistan Bakery",
+    "Premium Cakes",
+  ],
+
+  authors: [
+    {
+      name: "Cakoo Bakery",
+    },
+  ],
+
+  creator: "Cakoo Bakery",
+
+  publisher: "Cakoo Bakery",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  icons: {
+    icon: siteConfig.links.favicon,
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
 };
 
 export default function RootLayout({
@@ -54,18 +116,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={`
+        ${bodoni.variable}
         ${geistSans.variable}
         ${geistMono.variable}
         ${cormorant.variable}
-        ${bodoni.variable}
-${geistSans.variable}
-${geistMono.variable}
-${cormorant.variable}
-${italiana.variable}
+        ${italiana.variable}
 
       `}
     >
       <body className="antialiased">
+        <StructuredData />
 
     <SmoothScroll>
         {children}

@@ -29,25 +29,25 @@ export default function Footer() {
         z-20
       "
     >
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    viewBox="0 0 1440 120"
-    className="block w-full h-33"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="#382116"
-      d="
-       M0,120
-       C180,70 420,20 720,70
-       C1020,120 1260,70 1440,95
-       L1440,120
-       L0,120
-       Z
-      "
-    />
-  </svg>
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 1440 120"
+      className="block w-full h-33"
+      preserveAspectRatio="none"
+    >
+      <path
+        fill="#382116"
+        d="
+         M0,120
+         C180,70 420,20 720,70
+         C1020,120 1260,70 1440,95
+         L1440,120
+         L0,120
+         Z
+        "
+      />
+    </svg>
 
   
 </div>
@@ -65,31 +65,25 @@ export default function Footer() {
 
 
       {/* Gold Ambient Glow */}
-<motion.div
-  animate={{
-    scale: [1, 1.08, 1],
-    opacity: [0.08, 0.15, 0.08],
-  }}
-  transition={{
-    duration: 9,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
-  className="
-    absolute
-    right-[-100px]
-    top-[-120px]
-    h-[700px]
-    w-[700px]
-    rounded-full
-    bg-[#D4AF37]/15
-    blur-[220px]
-  "
-/>
+      <div
+        aria-hidden="true"
+        className="
+          absolute
+          right-[-100px]
+          top-[-120px]
+          h-[700px]
+          w-[700px]
+          rounded-full
+          bg-[#D4AF37]/15
+          blur-[220px]
+          animate-footer-glow
+        "
+      />
 
       {/* Chocolate Glow */}
 
       <div
+      aria-hidden="true"
         className="
           absolute
           left-0
@@ -134,28 +128,29 @@ export default function Footer() {
 
         {/* Logo */}
 
-          <div
-    className="
-      mt-3
-      text-xs
-      uppercase
-      tracking-[0.35em]
-      text-white/25
-    "
-  >
+        <div
+          aria-hidden="true"      
+          className="
+            mt-3
+            text-xs
+            uppercase
+            tracking-[0.35em]
+            text-white/25
+          "
+        >
     <div
-className="
-absolute
-left-1/2
-top-20
-h-44
-w-44
--translate-x-1/2
-rounded-full
-bg-[#D4AF37]/8
-blur-[90px]
-"
-/>
+      className="
+      absolute
+      left-1/2
+      top-20
+      h-44
+      w-44
+      -translate-x-1/2
+      rounded-full
+      bg-[#D4AF37]/8
+      blur-[90px]
+      "
+      />
     <Image
     src="/images/cakoo-v3.png"
     alt="Cakoo"
@@ -212,40 +207,37 @@ whileInView={{
           </p>
 
         </motion.div>
-        <motion.div
-  initial={{ scaleX: 0 }}
-  whileInView={{ scaleX: 1 }}
-  viewport={{ once: true }}
-  transition={{ delay: .2, duration: .8 }}
-  className="
-    mx-auto
-    mt-7
-    flex
-    items-center
-    justify-center
-    gap-6
-  "
->
+        
+        <div
+          className="
+            mx-auto
+            mt-7
+            flex
+            items-center
+            justify-center
+            gap-6
+          "
+        >
+        
+          <div className="h-px w-40 bg-gradient-to-r from-transparent to-[#D4AF37]/40" />
+        
+          <span className="text-[#D4AF37] text-xl">
+            ✦
+          </span>
+        
+          <div className="h-px w-40 bg-gradient-to-l from-transparent to-[#D4AF37]/40" />
+        
+        </div>
 
-  <div className="h-px w-40 bg-gradient-to-r from-transparent to-[#D4AF37]/40" />
-
-  <span className="text-[#D4AF37] text-xl">
-    ✦
-  </span>
-
-  <div className="h-px w-40 bg-gradient-to-l from-transparent to-[#D4AF37]/40" />
-
-</motion.div>
-
-<div
-className="
-mt-8
-flex
-justify-center
-items-start
-gap-40
-"
->
+        <div
+          className="
+            mt-8
+            flex
+            justify-center
+            items-start
+            gap-40
+          "
+        >
 
   <div className="text-center w-40">
 

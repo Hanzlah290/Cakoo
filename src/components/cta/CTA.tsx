@@ -24,6 +24,7 @@ export default function CTA() {
   
 
 <div
+aria-hidden="true"
 className="
 relative
 mx-auto
@@ -38,6 +39,7 @@ pb-[320px]
 
         {/* Main Gold Glow */}
 <div
+aria-hidden="true"
 className="
 absolute
 left-1/2
@@ -52,6 +54,7 @@ blur-[180px]
 "
 />
 <div
+aria-hidden="true"
 className="
 absolute
 left-[15%]
@@ -107,17 +110,18 @@ blur-[120px]
           </h2>
 
           <div
-  className="
-    mx-auto
-    mt-12
-    h-px
-    w-28
-    bg-gradient-to-r
-    from-transparent
-    via-[#D4AF37]
-    to-transparent
-  "
-/>
+          aria-hidden="true"
+            className="
+              mx-auto
+              mt-12
+              h-px
+              w-28
+              bg-gradient-to-r
+              from-transparent
+              via-[#D4AF37]
+              to-transparent
+            "
+          />
 
           <p
             className="
@@ -158,6 +162,10 @@ blur-[120px]
       duration-300
       hover:scale-[1.02]
       hover:shadow-[#D4AF37]/35
+      focus-visible:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-[#D4AF37]
+      focus-visible:ring-offset-2
     "
   >
     Order on WhatsApp
@@ -181,6 +189,10 @@ blur-[120px]
       duration-300
       hover:bg-white/90
       hover:border-[#D4AF37]/40
+      focus-visible:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-[#D4AF37]
+      focus-visible:ring-offset-2
     "
   >
     Contact Us
@@ -190,78 +202,60 @@ blur-[120px]
 
         {/* Luxury Ring */}
 
-         <motion.div
-           animate={{
-             rotate: 360,
-           }}
-           transition={{
-             duration: 90,
-             repeat: Infinity,
-             ease: "linear",
-           }}
-           className="
-             absolute
-             bottom-[-40px]
-             left-1/2
-             z-10
-             h-[620px]
-             w-[620px]
-             -translate-x-1/2
-             rounded-full
-             border
-             border-[#D4AF37]/18
-           "
-         />
+        <div
+          aria-hidden="true"
+          className="
+            absolute
+            bottom-[-40px]
+            left-1/2
+            z-10
+            h-[620px]
+            w-[620px]
+            -translate-x-1/2
+            rounded-full
+            border
+            border-[#D4AF37]/18
+            animate-rotate-slow
+          "
+        />
 
          {/* Sparkles */}
 
-         <motion.div
-           animate={{
-             y: [0, -12, 0],
-             opacity: [0.2, 1, 0.2],
-             scale: [1, 1.3, 1],
-           }}
-           transition={{
-             duration: 4,
-             repeat: Infinity,
-           }}
-           className="
-             absolute
-             left-[20%]
-             top-[72%]
-             z-20
-             h-2
-             w-2
-             rounded-full
-             bg-[#D4AF37]
-           "
-         />
-         
-         <motion.div
-           animate={{
-             opacity: [.2,1,.2],
-             rotate:[0,180,360],
-           }}
-           transition={{
-             duration:7,
-             repeat:Infinity,
-           }}
-           className="
-             absolute
-             left-[30%]
-             top-[84%]
-             z-20
-             text-[#D4AF37]/60
-             text-xl
-           "
-         >
-             ✦
-         </motion.div>
+          <div
+            aria-hidden="true"
+            className="
+              absolute
+              left-[20%]
+              top-[72%]
+              z-20
+              h-2
+              w-2
+              rounded-full
+              bg-[#D4AF37]
+              animate-sparkle-float
+            "
+          />
+                   
+          <div
+            aria-hidden="true"
+            className="
+              absolute
+              left-[30%]
+              top-[84%]
+              z-20
+              text-xl
+              text-[#D4AF37]/60
+              animate-sparkle-rotate
+            "
+          >
+            ✦
+          </div>
 
         {/* Floating Cake */}
 
 
           <div
+          aria-hidden="true"
           className="
           absolute
           left-1/2
@@ -276,69 +270,70 @@ blur-[120px]
           />
 
   
-        <motion.div
-            initial={{
-              opacity: 0,
-              y: 50,
-              scale: 0.97,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-            }}
-            viewport={viewport}
-            transition={{
-              duration: 0.9,
-              ease: "easeOut",
-            }}
-            className="
-            absolute
-            bottom-[0px]
-            left-1/2
-            z-30
-            -pointer-events-none
-            -translate-x-1/2
-          "
-        >
-          <div
-            className="
-              absolute
-              left-1/2
-              bottom-[80px]
-              h-12
-              w-72
-              -translate-x-1/2
-              rounded-full
-              bg-black/25
-              blur-3xl
-            "
-          />
-
-          <motion.div
-  animate={{
-    y: [0, -6, 0],
-  }}
-  transition={{
-    duration: 5,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
->
-        <Image
-          src="/images/cta-cake.png"
-          alt="Premium Cake"
-          width={350}
-          height={350}
-          className="
-            rotate-[-4deg]
-            select-none
-            pointer-events-none
-            drop-shadow-[0_40px_80px_rgba(0,0,0,.4)]
-          "
-        />
-        </motion.div>
-        </motion.div>
+         <motion.div
+           initial={{
+             opacity: 0,
+             y: 50,
+             scale: 0.97,
+           }}
+           whileInView={{
+             opacity: 1,
+             y: 0,
+             scale: 1,
+           }}
+           viewport={viewport}
+           transition={{
+             duration: 0.9,
+             ease: "easeOut",
+           }}
+           className="
+             absolute
+             bottom-0
+             left-1/2
+             z-30
+             -translate-x-1/2
+           "
+         >
+           <div
+             aria-hidden="true"
+             className="
+               absolute
+               left-1/2
+               bottom-[80px]
+               h-12
+               w-72
+               -translate-x-1/2
+               rounded-full
+               bg-black/25
+               blur-3xl
+             "
+           />
+         
+           <motion.div
+             aria-hidden="true"
+             animate={{
+               y: [0, -6, 0],
+             }}
+             transition={{
+               duration: 5,
+               repeat: Infinity,
+               ease: "easeInOut",
+             }}
+           >
+             <Image
+               src="/images/cta-cake.png"
+               alt="Elegant handcrafted celebration cake from Cakoo Bakery"
+               width={350}
+               height={350}
+               className="
+                 rotate-[-4deg]
+                 select-none
+                 pointer-events-none
+                 drop-shadow-[0_40px_80px_rgba(0,0,0,.4)]
+               "
+             />
+           </motion.div>
+         </motion.div>
 
         <div className="h-10" />
 

@@ -1,11 +1,9 @@
-"use client";
-
-
 export default function HeroBackground() {
   return (
     <>
       {/* Background Image */}
 <div
+aria-hidden="true"
   className="
     absolute
     inset-0
@@ -14,6 +12,7 @@ export default function HeroBackground() {
 />
 
 <div
+aria-hidden="true"
   className="absolute inset-0"
   style={{
     background: `
@@ -30,6 +29,7 @@ export default function HeroBackground() {
 />
 
 <div
+aria-hidden="true"
   className="absolute inset-0"
   style={{
     background:
@@ -42,6 +42,7 @@ export default function HeroBackground() {
 
       {/* Gold Glow Behind Cake */}
 <div
+aria-hidden="true"
   className="
     absolute
     right-[18%]
@@ -55,6 +56,7 @@ export default function HeroBackground() {
   "
 />
 <div
+aria-hidden="true"
   className="
     absolute
     right-[10%]
@@ -68,6 +70,7 @@ export default function HeroBackground() {
   "
 />
 <div
+aria-hidden="true"
   className="
     absolute
     right-[28%]
@@ -85,6 +88,7 @@ export default function HeroBackground() {
 
       {/* Soft Grain Texture */}
       <div
+      aria-hidden="true"
         className="
           absolute
           inset-0

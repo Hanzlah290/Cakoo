@@ -160,7 +160,7 @@ export default function Navbar() {
                    ${
                      active
                        ? "text-[#D4AF37]"
-                       : "text-[#2B170E] group-hover:text-[#D4AF37] focus-visible:outline-none focus-visible:text-[#D4AF37] focus-visible:ring-2 focus-visible:ring-[#D4AF37]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2B170E] rounded-md group-hover:-translate-y-[2px]"
+                       : "text-[#120C09] group-hover:text-[#D4AF37] focus-visible:outline-none focus-visible:text-[#D4AF37] focus-visible:ring-2 focus-visible:ring-[#D4AF37]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2B170E] rounded-md group-hover:-translate-y-[2px]"
                    }
                  `}
                >

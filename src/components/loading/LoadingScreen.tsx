@@ -45,15 +45,6 @@ useEffect(() => {
     }}
     className="fixed inset-0 z-[9999] overflow-hidden bg-[#382116]"
   >
-<div
-className="
-absolute
-inset-0
-opacity-[0.03]
-pointer-events-none
-bg-[url('/images/noise.png')]
-"
-/>
   {/* Top Left Cocoa Glow */}
   <div
     className="

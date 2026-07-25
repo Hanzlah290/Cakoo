@@ -1,44 +1,12 @@
-"use client";
+import type { Metadata } from "next";
+import HomePage from "@/components/pages/HomePage";
 
-import { useEffect, useState } from "react";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import LoadingScreen from "@/components/loading/LoadingScreen";
-import Hero from "@/components/hero/Hero";
-import SignatureSection from "@/components/signature/SignatureSection";
-import Stats from "@/components/stats/Stats";
-import CTA from "@/components/cta/CTA";
-import Marquee from "@/components/marquee/Marquee";
+export const metadata: Metadata = {
+  title: "Premium Handcrafted Cakes",
+  description:
+    "Discover handcrafted cakes, desserts, and celebration treats made with premium ingredients for every special occasion.",
+};
 
-export default function Home() {
-
-  const [loadingFinished, setLoadingFinished] = useState(false);
-
-useEffect(() => {
-  const timer = setTimeout(() => {
-    setLoadingFinished(true);
-  }, 3600); // Same duration as LoadingScreen
-
-  return () => clearTimeout(timer);
-}, []);
-
-  return (
-<>
-  {!loadingFinished ? (
-    <LoadingScreen
-      onComplete={() => setLoadingFinished(true)}
-    />
-  ) : (
-    <>
-      <Navbar />
-      <Hero />
-      <SignatureSection />
-      <Marquee />
-      <Stats />
-      <CTA />
-      <Footer />
-    </>
-  )}
-</>
-  );
+export default function Page() {
+  return <HomePage />;
 }
